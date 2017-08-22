@@ -2,30 +2,63 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+<div><canvas id="canvas" width="800" height="400"></canvas></div>
+<!-- javascript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script type="text/javascript">
+		var img = new Image();
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
+		//User Variables
+		img.src = "http://www.chicagoentertainmentagency.com/blog/wp-content/uploads/2014/02/Live-Music.jpg";
+		var CanvasXSize = 932; //width of canvas element
+		var CanvasYSize = 515; //height of canvas element
+		var speed = 30; //lower is faster
+		var scale = 1.05;
+		var y = -4.5; //vertical offset
+
+		var dx = 0.75;
+		var imgW; //image width
+		var imgH; //image height
+		var x = 0;
+		var clearX;
+		var clearY;
+		var ctx; //canvas element
+
+		img.onload = function() {
+    		imgW = img.width*scale;
+    		imgH = img.height*scale;
+    		if (imgW > CanvasXSize) { x = CanvasXSize-imgW; } // image larger than canvas
+    		if (imgW > CanvasXSize) { clearX = imgW; } // image larger than canvas
+    		else { clearX = CanvasXSize; }
+    		if (imgH > CanvasYSize) { clearY = imgH; } // image larger than canvas
+    		else { clearY = CanvasYSize; }
+    		//Get Canvas Element
+    		ctx = document.getElementById('canvas').getContext('2d');
+    		//Set Refresh Rate
+    		return setInterval(draw, speed);
+		}
+
+		function draw() {
+    		//Clear Canvas
+    		ctx.clearRect(0,0,clearX,clearY);
+    		//If image is <= Canvas Size
+    		if (imgW <= CanvasXSize) {
+       	 	//reset, start from beginning
+        		if (x > (CanvasXSize)) { x = 0; }
+        		//draw aditional image
+        		if (x > (CanvasXSize-imgW)) { ctx.drawImage(img,x-CanvasXSize+1,y,imgW,imgH); }
+    		}
+    		//If image is > Canvas Size
+    		else {
+        		//reset, start from beginning
+        		if (x > (CanvasXSize)) { x = CanvasXSize-imgW; }
+        		//draw aditional image
+        		if (x > (CanvasXSize-imgW)) { ctx.drawImage(img,x-imgW+1,y,imgW,imgH); }
+    		}
+    		//draw image
+    		ctx.drawImage(img,x,y,imgW,imgH);
+    		//amount to move
+    		x += dx;
+		}
+</script>

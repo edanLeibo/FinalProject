@@ -13,7 +13,10 @@ namespace EX5.Controllers
     public class BusinessesController : Controller
     {
         private BusinessContext db = new BusinessContext();
-
+        public ActionResult Admin()
+        {
+            return View(db.DBBusiness.ToList());
+        }
         // GET: Businesses
         public ActionResult Index()
         {
@@ -40,6 +43,7 @@ namespace EX5.Controllers
         {
             return View();
         }
+
 
         // POST: Businesses/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
@@ -124,4 +128,6 @@ namespace EX5.Controllers
             base.Dispose(disposing);
         }
     }
+
+
 }
