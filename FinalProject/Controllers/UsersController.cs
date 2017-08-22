@@ -7,12 +7,13 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using EX5.Models;
+using FinalProject.Dal;
 
 namespace EX5.Controllers
 {
     public class UsersController : Controller
     {
-        private UserContext db = new UserContext();
+        private GeneralDbContext db = new GeneralDbContext();
 
         // GET: Users
         public ActionResult Index()
