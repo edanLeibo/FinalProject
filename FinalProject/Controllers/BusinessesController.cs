@@ -7,12 +7,13 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using EX5.Models;
+using FinalProject.Dal;
 
 namespace EX5.Controllers
 {
     public class BusinessesController : Controller
     {
-        private BusinessContext db = new BusinessContext();
+        private GeneralDbContext db = new GeneralDbContext();
         public ActionResult Admin()
         {
             return View(db.DBBusiness.ToList());
