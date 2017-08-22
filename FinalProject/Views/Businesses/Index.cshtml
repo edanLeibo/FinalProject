@@ -6,9 +6,12 @@
 
 <h2>Index</h2>
 
+@if (User.Identity.Name.Equals("admin@gmail.com"))
+{
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+}
 <table class="table">
     <tr>
         <th>
