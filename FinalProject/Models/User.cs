@@ -10,8 +10,8 @@ namespace EX5.Models
 {
     public class User : IComparable<User>
     {
-        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity), Key()]
-        public int ID { get; set; }
+       // [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity), Key()]
+        public int UserID { get; set; }
 
         [Display(Name = "FirstName")]
         [DataType(DataType.Text)]
@@ -47,9 +47,4 @@ namespace EX5.Models
 
     }
 
-    public class UserContext : DbContext
-    {
-        public DbSet<User> DBUser { get; set; }
-
-    }
 }

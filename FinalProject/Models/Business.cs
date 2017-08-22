@@ -10,8 +10,8 @@ namespace EX5.Models
 {
     public class Business 
     {
-        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity), Key()]
-        public int ID { get; set; }
+        //[DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity), Key()]
+        public int BusinessID { get; set; }
 
         [Display(Name = "BusinessName")]
         [DataType(DataType.Text)]
@@ -47,9 +47,4 @@ namespace EX5.Models
 
     }
 
-    public class BusinessContext : DbContext
-    {
-        public DbSet<Business> DBBusiness { get; set; }
-
-    }
 }

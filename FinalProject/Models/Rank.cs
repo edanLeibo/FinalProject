@@ -10,8 +10,8 @@ namespace EX5.Models
 {
     public class Rank
     {
-        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity), Key()]
-        public int ID { get; set; }
+        //[DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity), Key()]
+        public int RankID { get; set; }
 
         [Display(Name = "BusinessID")]
         public int BusinessID { get; set; }
@@ -30,11 +30,4 @@ namespace EX5.Models
 
         public virtual Business Business { get; set; }
     }
-
-    public class RankContext : DbContext
-    {
-        public DbSet<Rank> DBRank { get; set; }
-
-    }
-
 }
