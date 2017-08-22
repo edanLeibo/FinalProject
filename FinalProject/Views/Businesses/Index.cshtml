@@ -6,9 +6,12 @@
 
 <h2>Index</h2>
 
+@if (User.Identity.Name.Equals("admin@gmail.com"))
+{
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+}
 <table class="table">
     <tr>
         <th>
@@ -65,9 +68,9 @@
             @Html.DisplayFor(modelItem => item.Video)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+            @Html.ActionLink("Edit", "Edit", new { id=item.BusinessID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.BusinessID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.BusinessID })
         </td>
     </tr>
 }
