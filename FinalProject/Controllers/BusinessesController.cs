@@ -87,7 +87,7 @@ namespace EX5.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,BusinessName,Type,Owner,PhoneNumber,Address,Website,Description,Photo,Video")] Business business)
+        public ActionResult Edit([Bind(Include = "ID,BusinessName,Type,Owner,PhoneNumber,StreetAddress,City,Website,Description,Photo,Video")] Business business)
         {
             if (ModelState.IsValid)
             {

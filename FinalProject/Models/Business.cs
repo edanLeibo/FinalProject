@@ -29,9 +29,13 @@ namespace EX5.Models
         [DataType(DataType.Text)]
         public string PhoneNumber { get; set; }
 
-        [Display(Name = "Address")]
+        [Display(Name = "Street Address")]
         [DataType(DataType.Text)]
-        public string Address { get; set; }
+        public string StreetAddress { get; set; }
+
+        [Display(Name = "City")]
+        [DataType(DataType.Text)]
+        public string City { get; set; }
 
         [Display(Name = "Website")]
         [DataType(DataType.Url)]
