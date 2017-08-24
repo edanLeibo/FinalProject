@@ -23,11 +23,29 @@ namespace EX5.Controllers
 
         [Authorize]
         // GET: Businesses
-        public ActionResult Index()
+        public ActionResult Index(string BusinessName,string Type, string StreetAddress, string City)
         {
-            return View(db.DBBusiness.ToList());
-        }
+            var Bussinesses = from s in db.DBBusiness select s;
+            if (!String.IsNullOrEmpty(BusinessName))
+            {
+                Bussinesses = Bussinesses.Where(s => s.BusinessName.ToLower().Contains(BusinessName.ToLower()));
+            }
+            if (!String.IsNullOrEmpty(Type))
+            {
+                Bussinesses = Bussinesses.Where(s => s.Type.ToLower().Contains(Type.ToLower()));
+            }
+            if (!String.IsNullOrEmpty(StreetAddress))
+            {
+                Bussinesses = Bussinesses.Where(s => s.StreetAddress.ToLower().Contains(StreetAddress.ToLower()));
+            }
+            if (!String.IsNullOrEmpty(City))
+            {
+                Bussinesses = Bussinesses.Where(s => s.City.ToLower().Contains(City.ToLower()));
+            }
 
+            return View(Bussinesses);
+        }
+          
         // GET: Businesses/Details/5
         public ActionResult Details(int? id)
         {

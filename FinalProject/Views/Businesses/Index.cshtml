@@ -8,83 +8,112 @@
 
 @if (User.Identity.Name.Equals("admin@gmail.com"))
 {
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-}
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.BusinessName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Type)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Owner)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PhoneNumber)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.StreetAddress)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.City)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Website)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Photo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Video)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.BusinessName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Type)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Owner)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PhoneNumber)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.StreetAddress)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.City)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Website)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Photo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Video)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.BusinessID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.BusinessID})|
-            @Html.ActionLink("Details", "Details", new { id = item.BusinessID })
-        </td>
-    </tr>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
 }
 
-</table>
+@{
+    HashSet<string> allCities = new HashSet<string>();
+    foreach (var b in Model)
+    {
+        allCities.Add(b.City.ToLower());
+    }
+
+}
+    @using (Html.BeginForm())
+        {
+            <p>
+                Name of business: @Html.TextBox("BusinessName")
+                Street address: @Html.TextBox("StreetAddress")
+                Type: @Html.TextBox("Type")
+                City: <select name="City">
+                         <option value=""></option>
+                         @foreach (var c in allCities)
+                         {
+                            <option value="@c"> @c</option>
+                         }
+                       </select>
+
+                
+                <input type="submit" value="Filter" />
+                <input type="button" value="Show all" onclick="location.href='@Url.Action("Index")'" />
+            </p>
+        }
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.BusinessName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Type)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Owner)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PhoneNumber)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.StreetAddress)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.City)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Website)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Description)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Photo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Video)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BusinessName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Type)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Owner)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PhoneNumber)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.StreetAddress)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.City)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Website)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Photo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Video)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.BusinessID }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.BusinessID })|
+                        @Html.ActionLink("Details", "Details", new { id = item.BusinessID })
+                    </td>
+                </tr>
+            }
+
+        </table>
