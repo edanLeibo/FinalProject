@@ -201,6 +201,7 @@
     <Compile Include="Controllers\BusinessesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\OfficesController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Dal\GeneralDbContext.cs" />
     <Compile Include="Global.asax.cs">
@@ -230,9 +231,18 @@
     <Compile Include="Migrations\201708241027101_cityAddedTobussiness.Designer.cs">
       <DependentUpon>201708241027101_cityAddedTobussiness.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201708241149262_addingOffices.cs" />
+    <Compile Include="Migrations\201708241149262_addingOffices.Designer.cs">
+      <DependentUpon>201708241149262_addingOffices.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708241154353_addingOfficesUpdateManager.cs" />
+    <Compile Include="Migrations\201708241154353_addingOfficesUpdateManager.Designer.cs">
+      <DependentUpon>201708241154353_addingOfficesUpdateManager.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Business.cs" />
+    <Compile Include="Models\Office.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Rank.cs" />
@@ -318,6 +328,11 @@
     <Content Include="Views\Businesses\Edit.cshtml" />
     <Content Include="Views\Businesses\Index.cshtml" />
     <Content Include="Views\Businesses\Admin.cshtml" />
+    <Content Include="Views\Offices\Create.cshtml" />
+    <Content Include="Views\Offices\Delete.cshtml" />
+    <Content Include="Views\Offices\Details.cshtml" />
+    <Content Include="Views\Offices\Edit.cshtml" />
+    <Content Include="Views\Offices\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -348,6 +363,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201708241027101_cityAddedTobussiness.resx">
       <DependentUpon>201708241027101_cityAddedTobussiness.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708241149262_addingOffices.resx">
+      <DependentUpon>201708241149262_addingOffices.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708241154353_addingOfficesUpdateManager.resx">
+      <DependentUpon>201708241154353_addingOfficesUpdateManager.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
