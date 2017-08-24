@@ -231,6 +231,14 @@
     <Compile Include="Migrations\201708241027101_cityAddedTobussiness.Designer.cs">
       <DependentUpon>201708241027101_cityAddedTobussiness.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201708241149262_addingOffices.cs" />
+    <Compile Include="Migrations\201708241149262_addingOffices.Designer.cs">
+      <DependentUpon>201708241149262_addingOffices.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708241154353_addingOfficesUpdateManager.cs" />
+    <Compile Include="Migrations\201708241154353_addingOfficesUpdateManager.Designer.cs">
+      <DependentUpon>201708241154353_addingOfficesUpdateManager.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Business.cs" />
@@ -355,6 +363,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201708241027101_cityAddedTobussiness.resx">
       <DependentUpon>201708241027101_cityAddedTobussiness.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708241149262_addingOffices.resx">
+      <DependentUpon>201708241149262_addingOffices.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708241154353_addingOfficesUpdateManager.resx">
+      <DependentUpon>201708241154353_addingOfficesUpdateManager.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

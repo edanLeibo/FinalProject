@@ -18,7 +18,7 @@ namespace FinalProject.Controllers
         // GET: Offices
         public ActionResult Index()
         {
-            return View(db.Offices.ToList());
+            return View(db.DBOffice.ToList());
         }
 
         // GET: Offices/Details/5
@@ -28,7 +28,7 @@ namespace FinalProject.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Office office = db.Offices.Find(id);
+            Office office = db.DBOffice.Find(id);
             if (office == null)
             {
                 return HttpNotFound();
@@ -51,7 +51,7 @@ namespace FinalProject.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Offices.Add(office);
+                db.DBOffice.Add(office);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -66,7 +66,7 @@ namespace FinalProject.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Office office = db.Offices.Find(id);
+            Office office = db.DBOffice.Find(id);
             if (office == null)
             {
                 return HttpNotFound();
@@ -97,7 +97,7 @@ namespace FinalProject.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Office office = db.Offices.Find(id);
+            Office office = db.DBOffice.Find(id);
             if (office == null)
             {
                 return HttpNotFound();
@@ -110,8 +110,8 @@ namespace FinalProject.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Office office = db.Offices.Find(id);
-            db.Offices.Remove(office);
+            Office office = db.DBOffice.Find(id);
+            db.DBOffice.Remove(office);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
