@@ -13,15 +13,19 @@ namespace EX5.Models
         //[DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity), Key()]
         public int BusinessID { get; set; }
 
-        [Display(Name = "BusinessName")]
+        [Display(Name = "Business Name")]
         [DataType(DataType.Text)]
         public string BusinessName { get; set; }
+
+        [Display(Name = "Type")]
+        [DataType(DataType.Text)]
+        public string Type { get; set; }
 
         [Display(Name = "Owner")]
         [DataType(DataType.Text)]
         public string Owner { get; set; }
 
-        [Display(Name = "PhoneNumber")]
+        [Display(Name = "Phone Number")]
         [DataType(DataType.Text)]
         public string PhoneNumber { get; set; }
 
@@ -33,9 +37,9 @@ namespace EX5.Models
         [DataType(DataType.Url)]
         public string Website { get; set; }
 
-        [Display(Name = "TextContent")]
+        [Display(Name = "Description")]
         [DataType(DataType.Text)]
-        public string TextContent { get; set; }
+        public string Description { get; set; }
 
         [Display(Name = "Photo")]
         public string Photo { get; set; }

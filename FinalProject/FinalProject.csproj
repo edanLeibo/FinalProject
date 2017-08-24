@@ -218,6 +218,14 @@
     <Compile Include="Migrations\201708220956200_FirstMigration1.Designer.cs">
       <DependentUpon>201708220956200_FirstMigration1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201708240738092_SeedAdded.cs" />
+    <Compile Include="Migrations\201708240738092_SeedAdded.Designer.cs">
+      <DependentUpon>201708240738092_SeedAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708240743255_TypeOfBussinessAdded.cs" />
+    <Compile Include="Migrations\201708240743255_TypeOfBussinessAdded.Designer.cs">
+      <DependentUpon>201708240743255_TypeOfBussinessAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Business.cs" />
@@ -327,6 +335,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201708220956200_FirstMigration1.resx">
       <DependentUpon>201708220956200_FirstMigration1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708240738092_SeedAdded.resx">
+      <DependentUpon>201708240738092_SeedAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708240743255_TypeOfBussinessAdded.resx">
+      <DependentUpon>201708240743255_TypeOfBussinessAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

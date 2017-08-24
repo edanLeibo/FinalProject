@@ -14,10 +14,14 @@ namespace EX5.Controllers
     public class BusinessesController : Controller
     {
         private GeneralDbContext db = new GeneralDbContext();
+
+        [Authorize]
         public ActionResult Admin()
         {
             return View(db.DBBusiness.ToList());
         }
+
+        [Authorize]
         // GET: Businesses
         public ActionResult Index()
         {
@@ -51,7 +55,7 @@ namespace EX5.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,BusinessName,Owner,PhoneNumber,Address,Website,TextContent,Photo,Video")] Business business)
+        public ActionResult Create([Bind(Include = "ID,BusinessName,Type,Owner,PhoneNumber,Address,Website,Description,Photo,Video")] Business business)
         {
             if (ModelState.IsValid)
             {
@@ -83,7 +87,7 @@ namespace EX5.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,BusinessName,Owner,PhoneNumber,Address,Website,TextContent,Photo,Video")] Business business)
+        public ActionResult Edit([Bind(Include = "ID,BusinessName,Type,Owner,PhoneNumber,Address,Website,Description,Photo,Video")] Business business)
         {
             if (ModelState.IsValid)
             {

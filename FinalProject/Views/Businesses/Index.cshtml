@@ -18,6 +18,9 @@
             @Html.DisplayNameFor(model => model.BusinessName)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.Type)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Owner)
         </th>
         <th>
@@ -30,7 +33,7 @@
             @Html.DisplayNameFor(model => model.Website)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.TextContent)
+            @Html.DisplayNameFor(model => model.Description)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Photo)
@@ -47,6 +50,9 @@
             @Html.DisplayFor(modelItem => item.BusinessName)
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.Type)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.Owner)
         </td>
         <td>
@@ -59,7 +65,7 @@
             @Html.DisplayFor(modelItem => item.Website)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.TextContent)
+            @Html.DisplayFor(modelItem => item.Description)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Photo)
@@ -71,7 +77,6 @@
             @Html.ActionLink("Edit", "Edit", new { id=item.BusinessID }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.BusinessID})|
             @Html.ActionLink("Details", "Details", new { id = item.BusinessID })
-            
         </td>
     </tr>
 }
