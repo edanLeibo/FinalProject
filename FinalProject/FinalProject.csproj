@@ -201,6 +201,7 @@
     <Compile Include="Controllers\BusinessesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\OfficesController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Dal\GeneralDbContext.cs" />
     <Compile Include="Global.asax.cs">
@@ -229,6 +230,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Business.cs" />
+    <Compile Include="Models\Office.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Rank.cs" />
@@ -314,6 +316,11 @@
     <Content Include="Views\Businesses\Edit.cshtml" />
     <Content Include="Views\Businesses\Index.cshtml" />
     <Content Include="Views\Businesses\Admin.cshtml" />
+    <Content Include="Views\Offices\Create.cshtml" />
+    <Content Include="Views\Offices\Delete.cshtml" />
+    <Content Include="Views\Offices\Details.cshtml" />
+    <Content Include="Views\Offices\Edit.cshtml" />
+    <Content Include="Views\Offices\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

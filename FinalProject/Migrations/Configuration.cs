@@ -45,6 +45,9 @@ namespace FinalProject.Migrations
             new Business() { BusinessID = 4, Type = "Construction", Address = "18/6 Samuel st. Tel Aviv", Website = "www.turnerconstruction.com", Photo = "", Description = "An American construction company, one of the largest construction management companies in the USA ", Owner = "Peter J. Davoren", BusinessName = "Turner Construction Company", Video = "", PhoneNumber = "03-7567709" },
             new Business() { BusinessID = 5, Type = "Construction", Address = "192/32 Rotenberg st. Ra'anana", Website = "www.accsal.com", Photo = "", Description = "Coffee bar", Owner = "Rami Cohen", BusinessName = "Accsal Construction", Video = "", PhoneNumber = "03-6555902" }
           );
-        }
+
+
+            context.DBOffice.AddOrUpdate(x=>x.OfficeID,
+                new Office () {OfficeID = 1, Manager = "Angelina Jolie", City = "Haifa", Street = Her    }
     }
 }
