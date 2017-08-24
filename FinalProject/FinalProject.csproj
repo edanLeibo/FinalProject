@@ -227,6 +227,10 @@
     <Compile Include="Migrations\201708240743255_TypeOfBussinessAdded.Designer.cs">
       <DependentUpon>201708240743255_TypeOfBussinessAdded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201708241027101_cityAddedTobussiness.cs" />
+    <Compile Include="Migrations\201708241027101_cityAddedTobussiness.Designer.cs">
+      <DependentUpon>201708241027101_cityAddedTobussiness.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Business.cs" />
@@ -348,6 +352,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201708240743255_TypeOfBussinessAdded.resx">
       <DependentUpon>201708240743255_TypeOfBussinessAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708241027101_cityAddedTobussiness.resx">
+      <DependentUpon>201708241027101_cityAddedTobussiness.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
