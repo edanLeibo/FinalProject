@@ -147,7 +147,7 @@ namespace EX5.Controllers
             Business business = db.DBBusiness.Find(id);
             int size = db.DBBusiness.Count();
             double newRank = (size * business.AVGrank + rank) / (size + 1);
-            business.AVGrank = newRank;
+            business.AVGrank = Convert.ToDouble(String.Format("{0:0.00}", newRank));
             db.SaveChanges();
             return Json(new { message= "ok"});
         }
