@@ -1,0 +1,30 @@
+﻿@model IEnumerable<FinalProject.ViewModel.ReviewDateGroup>
+
+@{
+    ViewBag.Title = "Reviews Statistics";
+}
+
+<h2>Reviews Statistics</h2>
+
+<table>
+    <tr>
+        <th>
+            Review Date
+        </th>
+        <th>
+            Amount of reviews
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReviewDate)
+            </td>
+            <td>
+                @item.ReviewCount
+            </td>
+        </tr>
+    }
+</table>
