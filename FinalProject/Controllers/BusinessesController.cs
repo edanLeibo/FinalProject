@@ -21,7 +21,6 @@ namespace EX5.Controllers
             return View(db.DBBusiness.ToList());
         }
 
-        [Authorize]
         // GET: Businesses
         public ActionResult Index(string BusinessName,string Type, string StreetAddress, string City)
         {
@@ -73,7 +72,7 @@ namespace EX5.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,BusinessName,Type,Owner,PhoneNumber,Address,Website,Description,Photo,Video")] Business business)
+        public ActionResult Create([Bind(Include = "ID,BusinessName,Type,Owner,PhoneNumber,Address,Website,Description,AVGrank,Photo,Video")] Business business)
         {
             if (ModelState.IsValid)
             {
@@ -105,7 +104,7 @@ namespace EX5.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,BusinessName,Type,Owner,PhoneNumber,StreetAddress,City,Website,Description,Photo,Video")] Business business)
+        public ActionResult Edit([Bind(Include = "ID,BusinessName,Type,Owner,PhoneNumber,StreetAddress,City,Website,Description,AVGrank,Photo,Video")] Business business)
         {
             if (ModelState.IsValid)
             {
@@ -140,6 +139,17 @@ namespace EX5.Controllers
             db.DBBusiness.Remove(business);
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public ActionResult GiveRank(int id, int rank)
+        {
+            Business business = db.DBBusiness.Find(id);
+            int size = db.DBBusiness.Count();
+            double newRank = (size * business.AVGrank + rank) / (size + 1);
+            business.AVGrank = newRank;
+            db.SaveChanges();
+            return Json(new { message= "ok"});
         }
 
         protected override void Dispose(bool disposing)

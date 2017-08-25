@@ -41,7 +41,10 @@
             </p>
         }
         <table class="table">
-            <tr>
+            <tr>    
+                <th>
+                    @Html.DisplayNameFor(model => model.Photo)
+                </th>
                 <th>
                     @Html.DisplayNameFor(model => model.BusinessName)
                 </th>
@@ -67,10 +70,7 @@
                     @Html.DisplayNameFor(model => model.Description)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Photo)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Video)
+                    @Html.DisplayNameFor(model => model.AVGrank)
                 </th>
                 <th></th>
             </tr>
@@ -78,6 +78,9 @@
             @foreach (var item in Model)
             {
                 <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Photo)
+                    </td>      
                     <td>
                         @Html.DisplayFor(modelItem => item.BusinessName)
                     </td>
@@ -103,14 +106,22 @@
                         @Html.DisplayFor(modelItem => item.Description)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Photo)
+                        @Html.DisplayFor(modelItem => item.AVGrank)
+                        <link rel="stylesheet" type="text/css" href="~/Content/myStylesheet.css">
+                        <div class="star-ratings-css">
+                            @{
+                                var percentStr = "width:" + (@item.AVGrank/5*100)+"%";
+                            }
+                            <div class="star-ratings-css-top" style=@percentStr><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                            <div class="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                        </div>
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Video)
-                    </td>
-                    <td>
-                        @Html.ActionLink("Edit", "Edit", new { id = item.BusinessID }) |
-                        @Html.ActionLink("Delete", "Delete", new { id = item.BusinessID })|
+                    @if (User.Identity.Name.Equals("admin@gmail.com"))
+                    {
+                        @Html.ActionLink("Edit", "Edit", new { id = item.BusinessID }) 
+                        @Html.ActionLink("Delete", "Delete", new { id = item.BusinessID })
+                    }
                         @Html.ActionLink("Details", "Details", new { id = item.BusinessID })
                     </td>
                 </tr>
