@@ -2,14 +2,12 @@
 
 @{
     ViewBag.Title = "Index";
-    
 }
 
 <h2>Index</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
-    markets = [];
 </p>
 
 <table class="table">  
@@ -62,12 +60,12 @@
             @Html.DisplayFor(modelItem => item.Manager)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.OfficeID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.OfficeID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.OfficeID })
+            @Html.ActionLink("Edit", "Edit", new { id = item.OfficeID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.OfficeID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.OfficeID })
         </td>
     </tr>
-  }
+}
 
 </table>
 
@@ -90,6 +88,7 @@
              padding: 0;
          }
     </style>
+
 </head>
 <body>
     <div id="map"></div>
@@ -110,7 +109,7 @@
 
         faunction
 
-      function initMap() {
+        function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
             center: { lat: 32.610551, lng: 35.293307 },
           zoom: 8
