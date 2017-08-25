@@ -273,6 +273,7 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\local-small-business-ss-1920.jpg" />
     <Content Include="Content\main.css" />
     <Content Include="Content\Arik.mp4" />
     <Content Include="Content\myStylesheet.css" />
@@ -283,9 +284,12 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="images\flower.png" />
+    <Content Include="images\local_business.png" />
+    <Content Include="images\new_reviewers.png" />
     <Content Include="images\intro_background.png" />
     <Content Include="images\intro_flower.png" />
-    <Content Include="images\intro_shauli.png" />
+    <Content Include="images\new_pic_review.png" />
+    <Content Include="images\intro_shuuauli.png" />
     <Content Include="images\nav_background.png" />
     <Content Include="images\rss.png" />
     <Content Include="images\sidebar_background.png" />

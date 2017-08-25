@@ -8,6 +8,8 @@ using System.Web;
 using System.Web.Mvc;
 using FinalProject.Dal;
 using FinalProject.Models;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace FinalProject.Controllers
 {
@@ -115,6 +117,7 @@ namespace FinalProject.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
 
         protected override void Dispose(bool disposing)
         {
