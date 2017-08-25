@@ -2,6 +2,7 @@
 
 @{
     ViewBag.Title = "Index";
+
 }
 
 <h2>Index</h2>
@@ -10,7 +11,11 @@
     @Html.ActionLink("Create New", "Create")
 </p>
 
-<table class="table">  
+<script>
+    var mrds = [];
+</script>
+
+<table class="table">
 
     <tr>
         <th>
@@ -36,36 +41,50 @@
         </th>
     </tr>
 
-@foreach (var item in Model) {
-     <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.OfficeID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.City)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Street)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.HouseNumber)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Latitude)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Longitude)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Manager)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.OfficeID }) |
-            @Html.ActionLink("Details", "Details", new { id = item.OfficeID }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.OfficeID })
-        </td>
-    </tr>
-}
+
+
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.OfficeID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.City)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Street)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HouseNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Latitude)
+                <script>
+                    mrds.push(@item.City);
+                    mrds.push(@item.Latitude);
+                    mrds.push(@item.Longitude);
+
+                </script>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Longitude)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Manager)
+            </td>
+            
+            <td>
+                <
+                @Html.ActionLink("Edit", "Edit", new { id = item.OfficeID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.OfficeID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.OfficeID })
+            </td>
+        </tr>
+
+    }
+
 
 </table>
 
@@ -76,21 +95,22 @@
     <meta name="viewport" content="initial-scale=1.0">
     <meta charset="utf-8">
     <style>
-         /* Always set the map height explicitly to define the size of the div
+        /* Always set the map height explicitly to define the size of the div
         * element that contains the map. */
-         #map {
-             height: 100%;
-         }
-         /* Optional: Makes the sample page fill the window. */
-         html, body {
-             height: 100%;
-             margin: 0;
-             padding: 0;
-         }
+        #map {
+            height: 100%;
+        }
+        /* Optional: Makes the sample page fill the window. */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
     </style>
 
 </head>
 <body>
+
     <div id="map"></div>
     <script>
         var map;
@@ -103,38 +123,49 @@
         var ashkelon = { name: "Ashkelon", lat: 31.673538, lng: 34.580925 };
         var afula = { name: "Afula", lat: 32.610551, lng: 35.293307 };
         var kiryatShmona = { name: "Kiryat Shmona", lat: 33.207793, lng: 35.568489 };
-
         var markers = [];
         markers.push(haifa, telAviv, jerusalem, beerSeva, tiberias, eilat, ashkelon, afula, kiryatShmona);
 
-        faunction
-
+        DisplayFor(mrds[0]);
         function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
-            center: { lat: 32.610551, lng: 35.293307 },
-          zoom: 8
-        });
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: { lat: 32.610551, lng: 35.293307 },
+                zoom: 8
+            });
 
-        var uluru = { lat: 32.610551, lng: 35.293307 };
+            for (i = 0; i < mrds.length ; i+3) {
+                // var name = item.City;
+                //var lat = item.Latitude;
+                //var lng = item.Longitude;
 
-        var marker = new google.maps.Marker({
-            position: uluru,
-            map: map
-        });
+                mr
+               // var mrk = mrds[i];
+                var marker = new google.maps.Marker({
+                    position: { lat: mrds[i], lng: mrds[i+1] },
+                    map: map,
+                    title: mrds[i+2]
+                });
 
-      }
+            }
+
+        }
 
 
 
-/**
-      var marker, i;
 
-      for (i = 0; i < markers.length; i++) {
-          marker = new google.maps.Marker({
-              position: new google.maps.LatLng(markers[i][1], markers[i][2]), map: map
-          });
-      }
-**/
+
+
+
+
+        /**
+              var marker, i;
+
+              for (i = 0; i < markers.length; i++) {
+                  marker = new google.maps.Marker({
+                      position: new google.maps.LatLng(markers[i][1], markers[i][2]), map: map
+                  });
+              }
+        **/
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBz6T_-pt82oRbHIpMHvVQakDH6PzZ31C8&callback=initMap"
             async defer></script>
