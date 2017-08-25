@@ -10,8 +10,7 @@ namespace FinalProject.Dal
 {
     public class GeneralDbContext : DbContext
     {
-        public DbSet<User> DBUser { get; set; }
         public DbSet<Business> DBBusiness { get; set; }
-        public DbSet<Rank> DBRank { get; set; }
+        public DbSet<Review> DBReview { get; set; }
         public DbSet<Office> DBOffice { get; set; }    }
 }

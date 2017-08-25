@@ -45,13 +45,16 @@ namespace EX5.Models
         [DataType(DataType.Text)]
         public string Description { get; set; }
 
+        [Display(Name = "Rank")]
+        public double AVGrank { get; set; }
+
         [Display(Name = "Photo")]
         public string Photo { get; set; }
 
         [Display(Name = "Video")]
         public string Video { get; set; }
 
-        public virtual ICollection<Rank> Ranks { get; set; }
+        public virtual ICollection<Review> Reviews { get; set; }
 
     }
 
