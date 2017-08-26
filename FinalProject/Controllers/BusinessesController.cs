@@ -149,7 +149,7 @@ namespace EX5.Controllers
             double newRank = (size * business.AVGrank + rank) / (size + 1);
             business.AVGrank = Convert.ToDouble(String.Format("{0:0.00}", newRank));
             db.SaveChanges();
-            return Json(new { message= "ok"});
+            return Json(new { AVGrank= business.AVGrank});
         }
 
         protected override void Dispose(bool disposing)

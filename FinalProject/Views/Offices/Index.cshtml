@@ -10,7 +10,16 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-
+@using (Html.BeginForm())
+{
+    <p>
+        Office Id number: @Html.TextBox("officeID")
+        City: @Html.TextBox("city")
+        Manager: @Html.TextBox("manager")
+        <input type="submit" value="Search" />
+        <input type="button" value="Show all" onclick="location.href='@Url.Action("Index")'" />
+    </p>
+}
 <table class="table">
 
     <tr>

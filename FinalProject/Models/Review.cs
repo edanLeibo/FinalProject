@@ -24,10 +24,6 @@ namespace EX5.Models
         [DataType(DataType.Text)]
         public string Description { get; set; }
 
-        [Display(Name = "Score")]
-        [DataType(DataType.Text)]
-        public int Score { get; set; }
-
         [Display(Name = "BusinessID")]
         public int BusinessID { get; set; }
 

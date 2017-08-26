@@ -24,3 +24,21 @@
   display: block;
   z-index: 0;
 }
+
+.carousel-content {
+    color:black;
+    display:flex;
+    align-items:center;
+}
+
+.carousel-content {
+    color:black;
+    display:flex;
+    align-items:center;
+}
+
+#text-carousel {
+  width: 100%;
+  height: auto;
+  padding: 50px;
+}

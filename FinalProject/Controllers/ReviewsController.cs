@@ -6,132 +6,133 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using EX5.Models;
 using FinalProject.Dal;
-using FinalProject.Models;
-using System.Data.SqlClient;
-using System.Configuration;
 
 namespace FinalProject.Controllers
 {
-    public class OfficesController : Controller
+    public class ReviewsController : Controller
     {
         private GeneralDbContext db = new GeneralDbContext();
 
-        // GET: Offices
-        public ActionResult Index(int? officeID, string city, string manager)
+        // GET: Reviews
+        public ActionResult Index(string businessName,string author, string description)
         {
-            var Offices = from o in db.DBOffice select o;
-            if (!(officeID==null))
+            var dBReview = db.DBReview.Include(r => r.Business);
+            if (!String.IsNullOrEmpty(businessName))
             {
-                Offices = Offices.Where(s => s.OfficeID.Equals(officeID));
+                dBReview = dBReview.Where(s => s.Business.BusinessName.ToLower().Contains(businessName.ToLower()));
             }
-            if (!String.IsNullOrEmpty(city))
+            if (!String.IsNullOrEmpty(author))
             {
-                Offices = Offices.Where(s => s.City.ToLower().Contains(city.ToLower()));
+                dBReview = dBReview.Where(s => s.Author.ToLower().Contains(author.ToLower()));
             }
-            if (!String.IsNullOrEmpty(manager))
+            if (!String.IsNullOrEmpty(description))
             {
-                Offices = Offices.Where(s => s.Manager.ToLower().Contains(manager.ToLower()));
+                dBReview = dBReview.Where(s => s.Description.ToLower().Contains(description.ToLower()));
             }
 
-            return View(Offices);
+            return View(dBReview.ToList());
         }
 
-        // GET: Offices/Details/5
+        // GET: Reviews/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Office office = db.DBOffice.Find(id);
-            if (office == null)
+            Review review = db.DBReview.Find(id);
+            if (review == null)
             {
                 return HttpNotFound();
             }
-            return View(office);
+            return View(review);
         }
 
-        // GET: Offices/Create
+        // GET: Reviews/Create
         public ActionResult Create()
         {
+            ViewBag.BusinessID = new SelectList(db.DBBusiness, "BusinessID", "BusinessName");
             return View();
         }
 
-        // POST: Offices/Create
+        // POST: Reviews/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "OfficeID,BusinessName,City,Street,HouseNumber,Latitude,Longitude,Owner")] Office office)
+        public ActionResult Create([Bind(Include = "ReviewID,Date,Author,Description,BusinessID")] Review review)
         {
             if (ModelState.IsValid)
             {
-                db.DBOffice.Add(office);
+                db.DBReview.Add(review);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(office);
+            ViewBag.BusinessID = new SelectList(db.DBBusiness, "BusinessID", "BusinessName", review.BusinessID);
+            return View(review);
         }
 
-        // GET: Offices/Edit/5
+        // GET: Reviews/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Office office = db.DBOffice.Find(id);
-            if (office == null)
+            Review review = db.DBReview.Find(id);
+            if (review == null)
             {
                 return HttpNotFound();
             }
-            return View(office);
+            ViewBag.BusinessID = new SelectList(db.DBBusiness, "BusinessID", "BusinessName", review.BusinessID);
+            return View(review);
         }
 
-        // POST: Offices/Edit/5
+        // POST: Reviews/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "OfficeID,BusinessName,City,Street,HouseNumber,Latitude,Longitude,Owner")] Office office)
+        public ActionResult Edit([Bind(Include = "ReviewID,Date,Author,Description,BusinessID")] Review review)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(office).State = EntityState.Modified;
+                db.Entry(review).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(office);
+            ViewBag.BusinessID = new SelectList(db.DBBusiness, "BusinessID", "BusinessName", review.BusinessID);
+            return View(review);
         }
 
-        // GET: Offices/Delete/5
+        // GET: Reviews/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Office office = db.DBOffice.Find(id);
-            if (office == null)
+            Review review = db.DBReview.Find(id);
+            if (review == null)
             {
                 return HttpNotFound();
             }
-            return View(office);
+            return View(review);
         }
 
-        // POST: Offices/Delete/5
+        // POST: Reviews/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Office office = db.DBOffice.Find(id);
-            db.DBOffice.Remove(office);
+            Review review = db.DBReview.Find(id);
+            db.DBReview.Remove(review);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-
 
         protected override void Dispose(bool disposing)
         {
