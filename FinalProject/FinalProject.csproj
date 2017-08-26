@@ -202,6 +202,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\OfficesController.cs" />
+    <Compile Include="Controllers\ReviewsController.cs" />
     <Compile Include="Controllers\StatisticsController.cs" />
     <Compile Include="Dal\GeneralDbContext.cs" />
     <Compile Include="Global.asax.cs">
@@ -356,6 +357,11 @@
     <Content Include="Views\Offices\Edit.cshtml" />
     <Content Include="Views\Offices\Index.cshtml" />
     <Content Include="Views\Statistics\ShowStatistics.cshtml" />
+    <Content Include="Views\Reviews\Create.cshtml" />
+    <Content Include="Views\Reviews\Delete.cshtml" />
+    <Content Include="Views\Reviews\Details.cshtml" />
+    <Content Include="Views\Reviews\Edit.cshtml" />
+    <Content Include="Views\Reviews\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

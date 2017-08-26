@@ -9,8 +9,9 @@ namespace FinalProject.ViewModel
     public class ReviewDateGroup
     {
         [DataType(DataType.Date)]
-        public DateTime? ReviewDate { get; set; }
+        public DateTime ReviewDate { get; internal set; }
 
         public int ReviewCount { get; set; }
+
     }
 }
