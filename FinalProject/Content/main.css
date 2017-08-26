@@ -58,6 +58,21 @@ p {
 	padding-bottom: 22px;
 }
 
+button {
+    background-color: #5d63e8;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px ;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+
+
 
 
 /*------------------------------
@@ -68,7 +83,7 @@ nav {
 	position: absolute;
 	left: 0;
 	width: 100%;
-    background: linear-gradient(#333333, #222222);
+    background: linear-gradient(#6b8298, #353434);
 }
 
 	nav ul {
@@ -89,7 +104,7 @@ nav {
 				line-height: 44px;
 				text-align: center;
 				text-decoration: none;
-				color: #777;
+				color: #f6f7f9;
 			}
 			
 				nav ul li a:hover {
@@ -115,7 +130,7 @@ nav {
 	position: relative;
 	margin-top: 66px;
 	padding: 44px;
-	background: linear-gradient(#B4DD10, #467612);
+	background: linear-gradient(#de6286, #f0f0f0);
 	
 	/* Background-size not implemented yet */
 	-webkit-background-size: 100%;
@@ -248,6 +263,8 @@ aside section {
 	height: auto;
 	-webkit-box-shadow: 3px 3px 7px #777;
 }
+
+
 
 /*------------------------------
 =COMMENTS

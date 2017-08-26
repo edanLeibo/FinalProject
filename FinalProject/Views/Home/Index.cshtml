@@ -1,14 +1,14 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-
-@Html.ActionLink("Watch all businesses","Index","Businesses")
-<div><canvas id="canvas" width="800" height="400"></canvas></div>
+<button type="button" onclick="location.href='@Url.Action("Index", "Businesses")'" >Watch all businesses</button>
+<div><canvas id="canvas" width="1900" height="1000"></canvas></div>
 <!-- javascript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 
 <script type="text/javascript">
+
 		var img = new Image();
 
 		//User Variables
@@ -63,4 +63,5 @@
     		//amount to move
     		x += dx;
 		}
+
 </script>
