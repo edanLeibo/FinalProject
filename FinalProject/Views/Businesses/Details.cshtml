@@ -85,13 +85,11 @@
 
 @if (@Html.Raw(Model.Photo) != null)
 {
-    <h2>Business photo</h2>
     <img src=@Html.Raw(Model.Photo) alt="Mountain View" style="width:304px;height:228px;">
 }
 
 @if (@Html.Raw(Model.Video) != null)
 {
-    <h2>Business video</h2>
     <iframe src="@Html.Raw(Model.Video)" width="304px" height="228px" frameborder="0" allowfullscreen></iframe>
 }
 
