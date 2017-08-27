@@ -82,7 +82,7 @@
                         @Html.DisplayFor(modelItem => item.Photo)
                     </td>      
                     <td>
-                        @Html.DisplayFor(modelItem => item.BusinessName)
+                        @Html.ActionLink(item.BusinessName, "Details", new { id = item.BusinessID })
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Type)
@@ -122,7 +122,6 @@
                         @Html.ActionLink("Edit", "Edit", new { id = item.BusinessID }) 
                         @Html.ActionLink("Delete", "Delete", new { id = item.BusinessID })
                     }
-                        @Html.ActionLink("Details", "Details", new { id = item.BusinessID })
                     </td>
                 </tr>
             }
