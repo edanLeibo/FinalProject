@@ -199,6 +199,10 @@
              @Html.ActionLink("Edit", "Edit", new { id = Model.BusinessID })
         }
         @Html.ActionLink("Back to List of Businesses", "Index")
+        
+        <button type="button" id="addReviewButton" onclick="window.location='/Reviews/Create/' + @Model.BusinessID">Add Review</button>
+
+
     </p>
 
 <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css'>

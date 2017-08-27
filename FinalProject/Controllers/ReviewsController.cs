@@ -50,11 +50,29 @@ namespace FinalProject.Controllers
             return View(review);
         }
 
+        /**
         // GET: Reviews/Create
         public ActionResult Create()
         {
             ViewBag.BusinessID = new SelectList(db.DBBusiness, "BusinessID", "BusinessName");
             return View();
+        }
+        **/
+
+        // GET: Reviews/Create
+        public ActionResult Create(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Business business = db.DBBusiness.Find(id);
+            if (business == null)
+            {
+                return HttpNotFound();
+            }
+            ViewBag.BusinessID = new SelectList(db.DBBusiness, "BusinessID", "BusinessName", business.BusinessID);
+            return View(); 
         }
 
         // POST: Reviews/Create
@@ -78,6 +96,7 @@ namespace FinalProject.Controllers
         // GET: Reviews/Edit/5
         public ActionResult Edit(int? id)
         {
+            /**
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -89,6 +108,8 @@ namespace FinalProject.Controllers
             }
             ViewBag.BusinessID = new SelectList(db.DBBusiness, "BusinessID", "BusinessName", review.BusinessID);
             return View(review);
+    **/
+            return Json(id);
         }
 
         // POST: Reviews/Edit/5
