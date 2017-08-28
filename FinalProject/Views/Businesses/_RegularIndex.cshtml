@@ -5,7 +5,7 @@
 <link href="http://fonts.googleapis.com/css?family=Reenie+Beanie:regular" rel="stylesheet" type="text/css">
 <style type="text/css">
 
-    h2, p.note {
+    h2#b-name, p.note {
         font-size: 100%;
         font-weight: normal;
     }
@@ -40,7 +40,7 @@
             float: left;
         }
 
-            ul.u li h2 {
+            ul.u li h2#b-name {
                 font-size: 150%;
                 font-weight: bold;
                 padding-bottom: 0px;
@@ -103,7 +103,7 @@
         {
             <li onclick="location.href='@Url.Action("Details","Businesses",new { id = item.BusinessID })'">
                  <a href="#">
-                    <h2>@Html.DisplayFor(modelItem => item.BusinessName)</h2>
+                    <h2 id="b-name">@Html.DisplayFor(modelItem => item.BusinessName)</h2>
                     <p class="note">
                         @Html.DisplayFor(modelItem => item.StreetAddress)<br/>
                         @Html.DisplayFor(modelItem => item.City)<br />
@@ -120,79 +120,3 @@
             </li>
         }
     </ul>
-@*
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.BusinessName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Type)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Owner)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PhoneNumber)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.StreetAddress)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.City)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Website)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.AVGrank)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Photo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Video)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.BusinessName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Type)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Owner)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PhoneNumber)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.StreetAddress)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.City)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Website)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AVGrank)
-        </td>
-        <td>
-            @Html.ActionLink("Details", "Details", new { id=item.BusinessID }) |
-        </td>
-    </tr>
-}
-
-</table>
-*@

@@ -9,6 +9,7 @@
     <div class="overlay">
         <h1 class="slogen">Open Your Mind For Innovation </h1>
         <p class="slogen" >Imagine how easy it will be to search your professionals</p>
+        <button id="btn-businesses" onclick="location.href='@Url.Action("Index","Businesses")'"><div id="d-businesess">Start Searching</div></button>
     </div>
 </div>  
 
@@ -50,5 +51,28 @@ video {
 
 p.slogen{
     font-size:x-large;
+}
+
+#btn-businesses {
+  outline:black solid 2.0px;
+  background-color:gray;
+  opacity: 0.2;
+  padding: 6px 8px;
+  border-radius: 3px;
+  color: black;
+  font-weight: bold;
+  border: none;
+  margin: 0;
+}
+
+#btn-businesses:hover {
+   opacity: 0.9; 
+}
+
+#d-businesess {
+    font-family: helvetica, arial, sans-serif;
+    font-size: 19pt;
+    opacity: 1;
+    color: yellow;
 }
 </style>

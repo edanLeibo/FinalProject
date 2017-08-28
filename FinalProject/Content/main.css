@@ -18,16 +18,16 @@ header, footer, section, aside, nav, article {
     display: block;
 }
 
-/* our shauli header with shadow */
+/* our  header with shadow */
 #shauli-header {
     text-shadow: 3px 3px #DDDDDD;
 }
 
 
 body {
+    min-width:650px;
     margin: 0 auto;
     padding: 22px 0;
-    /*width: 940px;*/
     width: 100%;
     height: 100% font: 13px/22px Helvetica, Arial, sans-serif;
     background: #bcbec3 !important;
@@ -41,7 +41,7 @@ body {
 }
 
 h1, h2 {
-    font-size: 28px;
+    font-size: 34px;
     line-height: 44px;
 }
 

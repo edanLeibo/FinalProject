@@ -23,10 +23,6 @@ namespace FinalProject.Controllers
             objProductModel.CountTitle = "Review Count";
             
             return View(objProductModel);
-
-
-
-            //return View();
         }
 
         public ReviewCount GetChartData()
@@ -45,7 +41,6 @@ namespace FinalProject.Controllers
                 var xV = xValue.Cast<Int32>().ToArray();
                 var yV = yValue.Cast<Int32>().ToArray();
                 ReviewCount objproduct = new ReviewCount();
-                //we can replace this code with database data.Where(w => w.Date.Year == PreviousYear.Year)///.Where(w => w.Date.Year == PreviousYear.Year)
                 string strx = string.Join(",", xV);
                 string stry = string.Join(",", yV);
                 objproduct.Month = strx;//"2009,2010,2011,2012,2013,2014";// string.Join(",", xV);//
