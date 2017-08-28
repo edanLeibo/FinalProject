@@ -199,6 +199,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BusinessesController.cs" />
+    <Compile Include="Controllers\ChartController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\OfficesController.cs" />
@@ -278,6 +279,7 @@
     <Content Include="Content\main.css" />
     <Content Include="Content\Arik.mp4" />
     <Content Include="Content\myStylesheet.css" />
+    <Content Include="Content\RegularBusinessStyle.css" />
     <Content Include="Content\starsStylesheet.css" />
     <Content Include="Content\style.css" />
     <Content Include="favicon.ico" />
@@ -313,6 +315,9 @@
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\Script.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="Views\Businesses\_AdminIndex.cshtml" />
+    <Content Include="Views\Businesses\_RegularIndex.cshtml" />
+    <None Include="Views\Chart\Index.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -352,7 +357,6 @@
     <Content Include="Views\Businesses\Details.cshtml" />
     <Content Include="Views\Businesses\Edit.cshtml" />
     <Content Include="Views\Businesses\Index.cshtml" />
-    <Content Include="Views\Businesses\Admin.cshtml" />
     <Content Include="Views\Offices\Create.cshtml" />
     <Content Include="Views\Offices\Delete.cshtml" />
     <Content Include="Views\Offices\Details.cshtml" />
