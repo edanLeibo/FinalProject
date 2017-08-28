@@ -22,7 +22,7 @@ $(function () {
 function changeSlideTimer() {
     iCurSlide++;
     if (iCurSlide == $(aImages).length) {
-        iCurSlide = 0;
+        iCurSlide = 1000;
     }
     clearInterval(iSmTimer);
     iSmTimer = setInterval(drawSwEffect, 40); // extra one timer
@@ -33,43 +33,13 @@ function drawSwEffect() {
     if (iCnt <= iEfIter / 2) {
         iContr += 0.004;
         // change brightness and contrast
-        Pixastic.process(canvas, 'brightness',
-        {
-            'brightness': 2,
-            'contrast': 0.0 + iContr,
-            'leaveDOM': true
-        },
-        function (img) {
-            ctx.drawImage(img, 0, 0);
-        }
-        );
     }
     if (iCnt > iEfIter / 2) {
         // change brightness
-        Pixastic.process(canvas, 'brightness',
-        {
-            'brightness': -2,
-            'contrast': 0,
-            'leaveDOM': true
-        },
-        function (img) {
-            ctx.drawImage(img, 0, 0);
-        }
-        );
     }
     if (iCnt == iEfIter / 2) { // switch actual image
         iContr = 0;
         ctx.drawImage(aImages[iCurSlide], 0, 0);
-        Pixastic.process(canvas, 'brightness',
-        {
-            'brightness': iEfIter,
-            'contrast': 0,
-            'leaveDOM': true
-        },
-        function (img) {
-            ctx.drawImage(img, 0, 0);
-        }
-        );
     } else if (iCnt == iEfIter) { // end of cycle, clear extra sub timer
         clearInterval(iSmTimer);
         iCnt = 0;
