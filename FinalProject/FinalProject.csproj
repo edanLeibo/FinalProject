@@ -368,6 +368,8 @@
     <Content Include="Views\Reviews\Details.cshtml" />
     <Content Include="Views\Reviews\Edit.cshtml" />
     <Content Include="Views\Reviews\Index.cshtml" />
+    <Content Include="Views\Home\_AdminContact.cshtml" />
+    <Content Include="Views\Home\_RegularContact.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

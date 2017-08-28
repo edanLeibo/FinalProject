@@ -1,0 +1,21 @@
+﻿@model IEnumerable<FinalProject.Models.Office>
+
+
+    @foreach (var item in Model)
+    {
+            <p>
+                @Html.DisplayFor(modelItem => item.HouseNumber)
+            </p>
+            <p>
+                @Html.DisplayFor(modelItem => item.Street)
+            </p>
+            <p>
+                @Html.DisplayFor(modelItem => item.City)
+            </p>
+            <p>
+                @Html.DisplayFor(modelItem => item.Manager)
+            </p>
+            <br/>
+            <br />
+    }
+
