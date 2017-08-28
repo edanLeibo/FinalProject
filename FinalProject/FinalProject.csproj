@@ -279,6 +279,7 @@
     <Content Include="Content\main.css" />
     <Content Include="Content\Arik.mp4" />
     <Content Include="Content\myStylesheet.css" />
+    <Content Include="Content\opening.mp4" />
     <Content Include="Content\RegularBusinessStyle.css" />
     <Content Include="Content\starsStylesheet.css" />
     <Content Include="Content\style.css" />

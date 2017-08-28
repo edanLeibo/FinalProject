@@ -23,7 +23,7 @@
     </audio>
 
     <header id="shauli-header">
-        <h1>MyBiz - the best place to rate and get reviews on local businesses</h1>
+        <h2>MyBiz - The best place to rate and get reviews on local businesses</h2>
 
     </header>
 
@@ -32,7 +32,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent" >
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
                     @Html.ActionLink("Home", "Index", "Home")
@@ -43,12 +43,12 @@
                 <li class="nav-item">
                     @Html.ActionLink("About", "About", "Home")
                 </li>
-                <li class="nav-item">
-                    @if (User.Identity.Name.Equals("admin@gmail.com"))
-                    {
-                        @Html.ActionLink("admin", "Admin", "Businesses", new { @class = "nav-link" })
-                    }
-                </li>
+                @if (User.Identity.Name.Equals("admin@gmail.com"))
+                {
+                    <li class="nav-item">
+                        @Html.ActionLink("Admin Control", "Admin", "Businesses")
+                    </li>
+                }
             </ul>
                 @Html.Partial("_LoginPartial")
         </div>
@@ -60,10 +60,10 @@
         <section id="intro">
             <!-- Introduction -->
 
-            <header>
-                <h2>Do you have questions for me?</h2>
-            </header>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</p>
+            <h2 style="padding-bottom: 0px;"> Looking for a business?</h2>
+
+            <p>Now it's simpler than ever! <br/> Use our search engine It is easy, safe and... FREE! 
+            </p>
             <img src="~/images/new_reviewers.png" alt="Shauli" />
         </section>
 
