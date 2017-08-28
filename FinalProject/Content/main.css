@@ -10,7 +10,6 @@
 
 /* Makeshift CSS Reset */
 * {
-    margin: auto;
     padding: 0;
 }
 
@@ -176,6 +175,9 @@ nav {
                 padding-left: 33px;
                 text-align: left;
             }
+            .navbar-nav {
+                display:inline;
+            }
 
 
 /*------------------------------
@@ -251,7 +253,7 @@ aside {
 }
 
 
-    /*------------------------------
+/*------------------------------
 =SIDEBAR
 ------------------------------*/
     aside section {
