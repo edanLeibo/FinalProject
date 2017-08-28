@@ -18,79 +18,17 @@
         <input type="button" value="Show all" onclick="location.href='@Url.Action("Index")'" />
     </p>
 }
-<table class="table">
 
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.OfficeID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.City)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Street)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.HouseNumber)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Latitude)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Longitude)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Manager)
-        </th>
-    </tr>
+@if (User.Identity.Name.Equals("admin@gmail.com"))
+{
+    @Html.Partial("_AdminContact", Model);
+}
+else
+{
+    @Html.Partial("_RegularContact", Model);
+}
 
 
-
-
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.OfficeID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.City)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Street)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.HouseNumber)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Latitude)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Longitude)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Manager)
-            </td>
-
-            <td>
-                <
-                @Html.ActionLink("Edit", "Edit", new { id = item.OfficeID }) |
-                @Html.ActionLink("Details", "Details", new { id = item.OfficeID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.OfficeID })
-            </td>
-        </tr>
-
-    }
-
-
-</table>
-
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Simple Map</title>
-    <meta name="viewport" content="initial-scale=1.0">
-    <meta charset="utf-8">
     <style>
         /* Always set the map height explicitly to define the size of the div
             * element that contains the map. */
@@ -105,11 +43,7 @@
         }
     </style>
 
-</head>
-<body>
-
     <script>
-
             function AddMarker(map, Latitude, Longitude) {
                 var latlng = new google.maps.LatLng(Latitude, Longitude);
 
@@ -132,18 +66,17 @@
                 var map = new google.maps.Map(document.getElementById
                     ("map_canvas"), options);
 
-                @foreach (var l in Model)
+        @foreach (var l in Model)
         {
              @(string.Format("AddMarker(map, {0},{1});", l.Latitude, l.Longitude));
         }
                 return map;
-            };
-
-
+        };
     </script>
+
     <div id="map_canvas" style="width: 500px; height: 300px;" />
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBz6T_-pt82oRbHIpMHvVQakDH6PzZ31C8&callback=initMap"
             async defer>
 
     </script>
-</body>
+
