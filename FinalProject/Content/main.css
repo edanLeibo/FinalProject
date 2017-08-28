@@ -10,7 +10,7 @@
 
 /* Makeshift CSS Reset */
 * {
-    margin: 0;
+    margin: auto;
     padding: 0;
 }
 
@@ -72,6 +72,8 @@ button {
 
 img {
     vertical-align: baseline !important;
+    max-width:100%;
+max-height:100%;
 }
 
 #customers {
@@ -414,7 +416,8 @@ footer {
     left: 0;
     width: 100%;
     background: #222;
-    bottom: 0;
+    bottom: 0px;
+    position: relative;
 }
 
     footer div {

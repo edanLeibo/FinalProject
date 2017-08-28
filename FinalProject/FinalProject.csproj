@@ -287,6 +287,11 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="images\flower.png" />
+    <Content Include="images\imageedit_11_3678298637.jpg" />
+    <Content Include="images\imageedit_3_4931344117.png" />
+    <Content Include="images\imageedit_5_6890471436.png" />
+    <Content Include="images\imageedit_7_9978923469.jpg" />
+    <Content Include="images\imageedit_9_7879279680.jpg" />
     <Content Include="images\local_business.png" />
     <Content Include="images\new_reviewers.png" />
     <Content Include="images\intro_background.png" />
@@ -310,7 +315,6 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Scripts\Pixastic.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\Script.js" />

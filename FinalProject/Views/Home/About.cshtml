@@ -17,7 +17,6 @@
     <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
 </address>
 <button type="button" onclick="location.href='@Url.Action("Index", "Businesses")'">Watch all businesses</button>
-<div><canvas id="canvas" width="500" height="500"></canvas></div>
 <!-- javascript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
@@ -25,22 +24,6 @@
 <script type="text/javascript">
 
 		var img = new Image();
-
-		//User Variables
-		img.src = "http://marketingland.com/wp-content/ml-loads/2014/08/local-small-business-ss-1920.jpg";
-		var CanvasXSize = 932; //width of canvas element
-		var CanvasYSize = 3000; //height of canvas element
-		var speed = 30; //lower is faster
-		var scale = 1.05;
-		var y = -4.5; //vertical offset
-
-		var dx = 0.75;
-		var imgW; //image width
-		var imgH; //image height
-		var x = 0;
-		var clearX;
-		var clearY;
-		var ctx; //canvas element
 
 		img.onload = function() {
     		imgW = img.width*scale;
@@ -101,11 +84,11 @@
     </header>
     <div class="container">
         <div class="slides">
-            <img src="~/images/intro_background.png" />
-            <img src="~/images/local_business.png" />
-            <img src="~/images/new_reviewers.png" />
-            <img src="~/images/new_pic_review.png" />
-            <img src="~/images/local_business.png" />
+            <img src="~/images/imageedit_11_3678298637.jpg"  style='height: 800px; width: 800px; object-fit: contain;background-size: contain''/>
+            <img src="~/images/imageedit_3_4931344117.png" style='height: 800px; width: 800px; object-fit: contain;background-size: contain'' />
+            <img src="~/images/imageedit_5_6890471436.png" style='height: 800px; width: 800px; object-fit: contain;background-size: contain''/>
+            <img src="~/images/imageedit_7_9978923469.jpg" style='height: 800px; width: 800px; object-fit: contain ;background-size: contain''/>
+            <img src="~/images/imageedit_9_7879279680.jpg" style='height: 800px; width: 800px; object-fit: contain ;background-size: contain' />
         </div>
         <canvas id="slideshow" width="900" height="300"></canvas>
     </div>
