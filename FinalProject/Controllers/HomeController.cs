@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FinalProject.Dal;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +9,8 @@ namespace EX5.Controllers
 {
     public class HomeController : Controller
     {
+        private GeneralDbContext db = new GeneralDbContext();
+    
         public ActionResult Index()
         {
             return View();
@@ -24,7 +27,7 @@ namespace EX5.Controllers
         {
             ViewBag.Message = "Your contact page.";
 
-            return View();
+            return View(db.DBOffice);
         }
     }
 }

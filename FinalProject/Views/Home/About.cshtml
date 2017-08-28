@@ -1,7 +1,117 @@
-﻿@{
+﻿
+@{
     ViewBag.Title = "About";
 }
 <h2>@ViewBag.Title.</h2>
 <h3>@ViewBag.Message</h3>
 
-<p>Use this area to provide additional information.</p>
+<address>
+    One Microsoft Way<br />
+    Redmond, WA 98052-6399<br />
+    <abbr title="Phone">P:</abbr>
+    425.555.0100
+</address>
+
+<address>
+    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
+    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+</address>
+<button type="button" onclick="location.href='@Url.Action("Index", "Businesses")'">Watch all businesses</button>
+<div><canvas id="canvas" width="500" height="500"></canvas></div>
+<!-- javascript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+
+<script type="text/javascript">
+
+		var img = new Image();
+
+		//User Variables
+		img.src = "http://marketingland.com/wp-content/ml-loads/2014/08/local-small-business-ss-1920.jpg";
+		var CanvasXSize = 932; //width of canvas element
+		var CanvasYSize = 3000; //height of canvas element
+		var speed = 30; //lower is faster
+		var scale = 1.05;
+		var y = -4.5; //vertical offset
+
+		var dx = 0.75;
+		var imgW; //image width
+		var imgH; //image height
+		var x = 0;
+		var clearX;
+		var clearY;
+		var ctx; //canvas element
+
+		img.onload = function() {
+    		imgW = img.width*scale;
+    		imgH = img.height*scale;
+    		if (imgW > CanvasXSize) { x = CanvasXSize-imgW; } // image larger than canvas
+    		if (imgW > CanvasXSize) { clearX = imgW; } // image larger than canvas
+    		else { clearX = CanvasXSize; }
+    		if (imgH > CanvasYSize) { clearY = imgH; } // image larger than canvas
+    		else { clearY = CanvasYSize; }
+    		//Get Canvas Element
+    		ctx = document.getElementById('canvas').getContext('2d');
+    		//Set Refresh Rate
+    		return setInterval(draw, speed);
+		}
+
+		function draw() {
+    		//Clear Canvas
+    		ctx.clearRect(0,0,clearX,clearY);
+    		//If image is <= Canvas Size
+    		if (imgW <= CanvasXSize) {
+       	 	//reset, start from beginning
+        		if (x > (CanvasXSize)) { x = 0; }
+        		//draw aditional image
+        		if (x > (CanvasXSize-imgW)) { ctx.drawImage(img,x-CanvasXSize+1,y,imgW,imgH); }
+    		}
+    		//If image is > Canvas Size
+    		else {
+        		//reset, start from beginning
+        		if (x > (CanvasXSize)) { x = CanvasXSize-imgW; }
+        		//draw aditional image
+        		if (x > (CanvasXSize-imgW)) { ctx.drawImage(img,x-imgW+1,y,imgW,imgH); }
+    		}
+    		//draw image
+    		ctx.drawImage(img,x,y,imgW,imgH);
+    		//amount to move
+    		x += dx;
+		}
+
+</script>
+
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>HTML5 Canvas Slideshow | Script Tutorials</title>
+    <link href="css/main.css" rel="stylesheet" type="text/css" />
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="js/pixastic.custom.js"></script>
+    <script src="js/script.js"></script>
+</head>
+<body>
+    <header>
+        <h2>HTML5 Canvas Slideshow</h2>
+        <a href="https://www.script-tutorials.com/html5-canvas-slideshow/" class="stuts">Back to original tutorial on <span>Script Tutorials</span></a>
+    </header>
+    <div class="container">
+        <div class="slides">
+            <img src="~/images/intro_background.png" />
+            <img src="~/images/local_business.png" />
+            <img src="~/images/new_reviewers.png" />
+            <img src="~/images/new_pic_review.png" />
+            <img src="~/images/local_business.png" />
+        </div>
+        <canvas id="slideshow" width="900" height="300"></canvas>
+    </div>
+</body>
+</html>
+
+
+
+

@@ -1,21 +1,149 @@
-﻿@{
+﻿@model IEnumerable<FinalProject.Models.Office>
+
+@{
     ViewBag.Title = "Contact";
 }
 <h2>@ViewBag.Title.</h2>
 <h3>@ViewBag.Message</h3>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
+<p>Feel free to contact every one of our offices  - we want to know what you think!</p>
 
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+@using (Html.BeginForm())
+{
+    <p>
+        Office Id number: @Html.TextBox("officeID")
+        City: @Html.TextBox("city")
+        Manager: @Html.TextBox("manager")
+        <input type="submit" value="Search" />
+        <input type="button" value="Show all" onclick="location.href='@Url.Action("Index")'" />
+    </p>
+}
+<table class="table">
 
-<video controls autoplay>
-    <source src="~/Content/Arik.mp4" type="audio/mp4" />
-</video>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.OfficeID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.City)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Street)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HouseNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Latitude)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Longitude)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Manager)
+        </th>
+    </tr>
+
+
+
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.OfficeID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.City)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Street)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HouseNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Latitude)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Longitude)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Manager)
+            </td>
+
+            <td>
+                <
+                @Html.ActionLink("Edit", "Edit", new { id = item.OfficeID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.OfficeID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.OfficeID })
+            </td>
+        </tr>
+
+    }
+
+
+</table>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+        /* Always set the map height explicitly to define the size of the div
+            * element that contains the map. */
+        #map {
+            height: 100%;
+        }
+        /* Optional: Makes the sample page fill the window. */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+
+</head>
+<body>
+
+    <script>
+
+            function AddMarker(map, Latitude, Longitude) {
+                var latlng = new google.maps.LatLng(Latitude, Longitude);
+
+                var markeroption = new google.maps.Marker({
+                    position: latlng,
+                    draggable: false,
+                    map: map,
+                    title: "Center"
+                });
+            }
+
+            function initMap() {
+                var latlng = new google.maps.LatLng(32.812452, 34.996451);
+
+                var options = {
+                    zoom: 10, center: latlng,
+                    mapTypeId: google.maps.MapTypeId.TERRAIN
+                };
+
+                var map = new google.maps.Map(document.getElementById
+                    ("map_canvas"), options);
+
+                @foreach (var l in Model)
+        {
+             @(string.Format("AddMarker(map, {0},{1});", l.Latitude, l.Longitude));
+        }
+                return map;
+            };
+
+
+    </script>
+    <div id="map_canvas" style="width: 500px; height: 300px;" />
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBz6T_-pt82oRbHIpMHvVQakDH6PzZ31C8&callback=initMap"
+            async defer>
+
+    </script>
+</body>
