@@ -6,6 +6,47 @@
 
 <h2>Details</h2>
 
+<head>
+    <link rel="stylesheet" href="~/Content/BusiDetails.css" type="text/css" media="screen" />
+</head>
+<section class="bussinesscard">
+    <div class="flip">
+        <div class="front">
+            <div class="top">
+                <div class="logo"><span class="skinny">@Model.BusinessName</span></div>
+            </div>
+            <div class="nametroduction">
+                <div class="name">@Model.Owner</div>
+                <div class="introduction">@Model.Description</div>
+            </div>
+            <div class="contact">
+                <div class="website">
+                    <span class="ion-earth"></span>
+                    <a href="#">@Model.Website</a>
+                </div>
+                <div class="twitter">
+                    <span class="ion-social-twitter">@Model.AVGrank</span>
+                </div>
+                <div class="phone ">
+                    <span class="ion-ios7-telephone"></span>
+                    <a href="#">@Model.PhoneNumber</a>
+                </div>
+                <div class="email ">
+                    <span class="ion-paper-airplane"></span>
+                    <a href="#">@Model.StreetAddress + @Model.City</a>
+                </div>
+            </div>
+        </div>
+        <div class="back"></div> <!--FIXES FONT RENDERING -->
+    </div>
+</section>
+<section class="tooltip">
+    <p>
+        Hover over the card to see the back.
+    </p>
+</section>
+
+
 <div>
     <h4>Business</h4>
     <hr />
