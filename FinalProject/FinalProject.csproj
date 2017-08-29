@@ -210,9 +210,17 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201708291807469_reorganizingDB.cs" />
-    <Compile Include="Migrations\201708291807469_reorganizingDB.Designer.cs">
-      <DependentUpon>201708291807469_reorganizingDB.cs</DependentUpon>
+    <Compile Include="Migrations\201708292122256_InitialCreate.cs" />
+    <Compile Include="Migrations\201708292122256_InitialCreate.Designer.cs">
+      <DependentUpon>201708292122256_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708292125053_trymigration.cs" />
+    <Compile Include="Migrations\201708292125053_trymigration.Designer.cs">
+      <DependentUpon>201708292125053_trymigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708292132102_seedAdded.cs" />
+    <Compile Include="Migrations\201708292132102_seedAdded.Designer.cs">
+      <DependentUpon>201708292132102_seedAdded.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -349,8 +357,14 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201708291807469_reorganizingDB.resx">
-      <DependentUpon>201708291807469_reorganizingDB.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201708292122256_InitialCreate.resx">
+      <DependentUpon>201708292122256_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708292125053_trymigration.resx">
+      <DependentUpon>201708292125053_trymigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708292132102_seedAdded.resx">
+      <DependentUpon>201708292132102_seedAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
