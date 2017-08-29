@@ -6,125 +6,135 @@
 
 <h2>Details</h2>
 
+<head>
+    <link rel="stylesheet" href="~/Content/BusiDetails.css" type="text/css" media="screen" />
+</head>
+<section class="bussinesscard">
+    <div class="flip">
+        <div class="front">
+            <div class="top">
+                <div class="logo"><span class="skinny">@Model.BusinessName</span></div>
+            </div>
+            <div class="nametroduction">
+                <div class="introduction">@Model.Owner</div>
+                <div class="name">@Model.Description</div>
+            </div>
+            <div class="contact">
+                <div class="website">
+                    <span class="ion-earth"></span>
+                    <a href="#">@Model.Website</a>
+                </div>
+                <!--
+                <div class="twitter">
+                    <span class="ion-social-twitter">@Model.AVGrank</span>
+                </div>
+                    -->
+                <div class="phone ">
+                    <span class="ion-ios7-telephone"></span>
+                    <a href="#">@Model.PhoneNumber</a>
+                </div>
+                <div class="email ">
+                    <span class="ion-paper-airplane"></span>
+                    <a href="#">@Model.StreetAddress  @Model.City</a>
+                </div>
+            </div>
+        </div>
+        <div class="back"></div> <!--FIXES FONT RENDERING -->
+    </div>
+</section>
+<section class="tooltip">
+    <p>
+        Hover over the card to see the back.
+    </p>
+</section>
 
+
+<div>
+    <h4>Business</h4>
+    <hr />
+    <dl class="dl-horizontal">
+
+        </dl>
+        <button class="buttonDetails" type="button" data-hover="CLICK ME" data-active=@Html.DisplayText(Model.BusinessName)><span>Business name</span></button>
+</div>
 
 
 
 <div>
     <h4>Business</h4>
     <hr />
-    <div class="col-sm-4 panel-group">
-        <div class="panel panel-primary">
-            <div class="panel-heading">
-                @Html.DisplayNameFor(model => model.BusinessName)
-            </div>
-            <div class="panel-body">
-       
-                @Html.DisplayFor(model => model.BusinessName)
-            </div>
-        </div>
-    </div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.BusinessName)
+        </dt>
 
-    <div class="col-sm-4 panel-group">
-        <div class="panel panel-info">
-            <div class="panel-heading">
-                @Html.DisplayNameFor(model => model.Type)
-            </div>
-            <div class="panel-body">
+        <dd>
+            @Html.DisplayFor(model => model.BusinessName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Category.CategoryName)
+        </dt>
 
-                @Html.DisplayFor(model => model.Type)
-            </div>
-        </div>
-    </div>
+        <dd>
+            @Html.DisplayFor(model => model.Category.CategoryName)
+        </dd>
 
-    <div class="col-sm-4 panel-group">
-        <div class="panel panel-info">
-            <div class="panel-heading">
-                @Html.DisplayNameFor(model => model.Owner)
-            </div>
-            <div class="panel-body">
+        <dt>
+            @Html.DisplayNameFor(model => model.Owner)
+        </dt>
 
-                @Html.DisplayFor(model => model.Owner)
-            </div>
-        </div>
-    </div>
+        <dd>
+            @Html.DisplayFor(model => model.Owner)
+        </dd>
 
-    <div class="col-sm-4 panel-group">
-        <div class="panel panel-info">
-            <div class="panel-heading">
-                @Html.DisplayNameFor(model => model.StreetAddress)
-            </div>
-            <div class="panel-body">
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </dt>
 
-                @Html.DisplayFor(model => model.PhoneNumber)
-            </div>
-        </div>
-    </div>
+        <dd>
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
 
-    <div class="col-sm-4 panel-group">
-        <div class="panel panel-info">
-            <div class="panel-heading">
-                @Html.DisplayNameFor(model => model.PhoneNumber)
-            </div>
-            <div class="panel-body">
+        <dt>
+            @Html.DisplayNameFor(model => model.StreetAddress)
+        </dt>
 
-                @Html.DisplayFor(model => model.StreetAddress)
-            </div>
-        </div>
-    </div>
+        <dd>
+            @Html.DisplayFor(model => model.StreetAddress)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.City)
+        </dt>
 
-    <div class="col-sm-4 panel-group">
-        <div class="panel panel-info">
-            <div class="panel-heading">
-                @Html.DisplayNameFor(model => model.City)
-            </div>
-            <div class="panel-body">
+        <dd>
+            @Html.DisplayFor(model => model.City)
+        </dd>
 
-                @Html.DisplayNameFor(model => model.City)
-            </div>
-        </div>
-    </div>
+        <dt>
+            @Html.DisplayNameFor(model => model.Website)
+        </dt>
 
-    <div class="col-sm-4 panel-group">
-        <div class="panel panel-info">
-            <div class="panel-heading">
-                @Html.DisplayNameFor(model => model.Website)
-            </div>
-            <div class="panel-body">
+        <dd>
+            @Html.DisplayFor(model => model.Website)
+        </dd>
 
-                @Html.DisplayFor(model => model.Website)
-            </div>
-        </div>
-    </div>
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
 
-    <div class="col-sm-4 panel-group">
-        <div class="panel panel-info">
-            <div class="panel-heading">
-                @Html.DisplayNameFor(model => model.Description)
-            </div>
-            <div class="panel-body">
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
 
-               @Html.DisplayFor(model => model.Description)
-            </div>
-        </div>
-    </div>
+        <dt>
+            @Html.DisplayNameFor(model => model.AVGrank)
+        </dt>
 
-    <div class="col-sm-4 panel-group">
-        <div class="panel panel-info">
-            <div class="panel-heading">
-                @Html.DisplayNameFor(model => model.AVGrank)
-            </div>
-            <div class="panel-body">
+        <dd>
+            @Html.DisplayFor(model => model.AVGrank)
+        </dd>
 
-                @Html.DisplayFor(model => model.AVGrank)
-            </div>
-        </div>
-    </div>
-
-
-
-
-
+    </dl>
 </div>
 
 @if (@Html.Raw(Model.Photo) != null)
@@ -232,16 +242,17 @@
             });
         });
 
-    </script>
+   </script>
 
     <p>
         @if (User.Identity.Name.Equals("admin@gmail.com"))
         {
              @Html.ActionLink("Edit", "Edit", new { id = Model.BusinessID })
         }
+        @Html.ActionLink("Back to List of Businesses", "Index")
         
         <button type="button" id="addReviewButton" onclick="window.location='/Reviews/Create/' + @Model.BusinessID">Add Review</button>
-        <button type="button" id="addReviewButton" onclick="window.location='/Businesses/Index'">Back to List of Businesses</button>
+
 
     </p>
 

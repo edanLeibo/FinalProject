@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FinalProject.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -16,10 +17,6 @@ namespace EX5.Models
         [Display(Name = "Business Name")]
         [DataType(DataType.Text)]
         public string BusinessName { get; set; }
-
-        [Display(Name = "Type")]
-        [DataType(DataType.Text)]
-        public string Type { get; set; }
 
         [Display(Name = "Owner")]
         [DataType(DataType.Text)]
@@ -53,6 +50,10 @@ namespace EX5.Models
 
         [Display(Name = "Video")]
         public string Video { get; set; }
+
+        public int CategoryID { get; set; }
+
+        public Category Category { get; set; }
 
         public virtual ICollection<Review> Reviews { get; set; }
 

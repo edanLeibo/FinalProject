@@ -22,16 +22,16 @@ namespace EX5.Controllers
         }
 
         // GET: Businesses
-        public ActionResult Index(string BusinessName,string Type, string StreetAddress, string City)
+        public ActionResult Index(string BusinessName,string Category, string StreetAddress, string City)
         {
             var Bussinesses = from s in db.DBBusiness select s;
             if (!String.IsNullOrEmpty(BusinessName))
             {
                 Bussinesses = Bussinesses.Where(s => s.BusinessName.ToLower().Contains(BusinessName.ToLower()));
             }
-            if (!String.IsNullOrEmpty(Type))
+            if (!String.IsNullOrEmpty(Category))
             {
-                Bussinesses = Bussinesses.Where(s => s.Type.ToLower().Contains(Type.ToLower()));
+                Bussinesses = Bussinesses.Where(s => s.Category.CategoryName.ToLower().Contains(Category.ToLower()));
             }
             if (!String.IsNullOrEmpty(StreetAddress))
             {
@@ -147,7 +147,7 @@ namespace EX5.Controllers
             Business business = db.DBBusiness.Find(id);
             int size = db.DBBusiness.Count();
             double newRank = (size * business.AVGrank + rank) / (size + 1);
-            business.AVGrank = Convert.ToDouble(String.Format("{0:0.00}", newRank));
+            business.AVGrank = Convert.ToDouble(String.Format("{0:0.0}", newRank));
             db.SaveChanges();
             return Json(new { AVGrank= business.AVGrank});
         }
