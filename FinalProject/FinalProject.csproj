@@ -273,6 +273,7 @@
     <Compile Include="ViewModel\ReviewDateGroup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\AdminPage.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\BusiDetails.css" />
