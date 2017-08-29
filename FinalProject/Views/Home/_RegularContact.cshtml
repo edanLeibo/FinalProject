@@ -1,15 +1,14 @@
 ﻿@model IEnumerable<FinalProject.Models.Office>
 
-<aside>
-    <ul style="background-color:#bcbec3");
-">
+<div style="float:left">
+    <ul style="background-color:#bcbec3; list-style:circle inside;">
         @foreach (var item in Model)
         {
-            <li>@Html.DisplayFor(modelItem => item.Street) @Html.DisplayFor(modelItem => item.HouseNumber) @Html.DisplayFor(modelItem => item.City) @Html.DisplayFor(modelItem => item.Manager)</li>
-            <li>Manager: @Html.DisplayFor(modelItem => item.Manager)</li>
+            <li style="font-weight:bold">@Html.DisplayFor(modelItem => item.Street) @Html.DisplayFor(modelItem => item.HouseNumber) @Html.DisplayFor(modelItem => item.City) @Html.DisplayFor(modelItem => item.Manager)</li>
+            <p>Manager: @Html.DisplayFor(modelItem => item.Manager)</p>
         }
     </ul>
-</aside>
+</div>
 
  
 

@@ -65,15 +65,15 @@ else
                 var map = new google.maps.Map(document.getElementById
                     ("map_canvas"), options);
 
-        @foreach (var l in Model)
-        {
-             @(string.Format("AddMarker(map, {0},{1});", l.Latitude, l.Longitude));
-        }
+                @foreach (var l in Model)
+                {
+                     @(string.Format("AddMarker(map, {0},{1});", l.Latitude, l.Longitude));
+                }
                 return map;
-        };
+            };
     </script>
 
-    <div id="map_canvas" style="width: 500px; height: 300px;" />
+    <div id="map_canvas" style="width: 500px; height: 300px; border:solid black 3px" ></div>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBz6T_-pt82oRbHIpMHvVQakDH6PzZ31C8&callback=initMap"
             async defer>
     </script>
