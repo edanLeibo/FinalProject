@@ -210,9 +210,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201708291807469_reorganizingDB.cs" />
-    <Compile Include="Migrations\201708291807469_reorganizingDB.Designer.cs">
-      <DependentUpon>201708291807469_reorganizingDB.cs</DependentUpon>
+    <Compile Include="Migrations\201708291853074_bugfixattemp.cs" />
+    <Compile Include="Migrations\201708291853074_bugfixattemp.Designer.cs">
+      <DependentUpon>201708291853074_bugfixattemp.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -349,8 +349,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201708291807469_reorganizingDB.resx">
-      <DependentUpon>201708291807469_reorganizingDB.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201708291853074_bugfixattemp.resx">
+      <DependentUpon>201708291853074_bugfixattemp.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
