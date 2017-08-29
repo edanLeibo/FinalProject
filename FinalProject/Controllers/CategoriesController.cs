@@ -18,7 +18,7 @@ namespace FinalProject.Controllers
         // GET: Categories
         public ActionResult Index()
         {
-            return View(db.DBCatagory.ToList());
+            return View(db.DBCategories.ToList());
         }
 
         // GET: Categories/Details/5
@@ -28,7 +28,7 @@ namespace FinalProject.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Category category = db.DBCatagory.Find(id);
+            Category category = db.DBCategories.Find(id);
             if (category == null)
             {
                 return HttpNotFound();
@@ -51,7 +51,7 @@ namespace FinalProject.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.DBCatagory.Add(category);
+                db.DBCategories.Add(category);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -66,7 +66,7 @@ namespace FinalProject.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Category category = db.DBCatagory.Find(id);
+            Category category = db.DBCategories.Find(id);
             if (category == null)
             {
                 return HttpNotFound();
@@ -97,7 +97,7 @@ namespace FinalProject.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Category category = db.DBCatagory.Find(id);
+            Category category = db.DBCategories.Find(id);
             if (category == null)
             {
                 return HttpNotFound();
@@ -110,8 +110,8 @@ namespace FinalProject.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Category category = db.DBCatagory.Find(id);
-            db.DBCatagory.Remove(category);
+            Category category = db.DBCategories.Find(id);
+            db.DBCategories.Remove(category);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

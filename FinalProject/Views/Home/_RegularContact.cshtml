@@ -1,19 +1,16 @@
 ﻿@model IEnumerable<FinalProject.Models.Office>
-    @foreach (var item in Model)
-    {
-            <p>
-                @Html.DisplayFor(modelItem => item.HouseNumber)
-            </p>
-            <p>
-                @Html.DisplayFor(modelItem => item.Street)
-            </p>
-            <p>
-                @Html.DisplayFor(modelItem => item.City)
-            </p>
-            <p>
-                @Html.DisplayFor(modelItem => item.Manager)
-            </p>
-            <br/>
-            <br/>
-    }
+
+<div style="float:left">
+    <ul style="background-color:#bcbec3; list-style:circle inside;">
+        @foreach (var item in Model)
+        {
+            <li style="font-weight:bold">@Html.DisplayFor(modelItem => item.Street) @Html.DisplayFor(modelItem => item.HouseNumber) @Html.DisplayFor(modelItem => item.City) @Html.DisplayFor(modelItem => item.Manager)</li>
+            <p>Manager: @Html.DisplayFor(modelItem => item.Manager)</p>
+        }
+    </ul>
+</div>
+
+ 
+
+
 
