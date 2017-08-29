@@ -70,11 +70,11 @@
             @Html.DisplayFor(model => model.BusinessName)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Type)
+            @Html.DisplayNameFor(model => model.Category.CategoryName)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Type)
+            @Html.DisplayFor(model => model.Category.CategoryName)
         </dd>
 
         <dt>
@@ -240,7 +240,7 @@
             });
         });
 
-    </script>
+   </script>
 
     <p>
         @if (User.Identity.Name.Equals("admin@gmail.com"))

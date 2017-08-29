@@ -10,7 +10,7 @@
             @Html.DisplayNameFor(model => model.BusinessName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Type)
+            @Html.DisplayNameFor(model => model.Category.CategoryName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Owner)
@@ -49,7 +49,7 @@
                 @Html.ActionLink(item.BusinessName, "Details", new { id = item.BusinessID })
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Type)
+                @Html.DisplayFor(modelItem => item.Category.CategoryName)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Owner)

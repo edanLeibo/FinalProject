@@ -12,5 +12,7 @@ namespace FinalProject.Dal
     {
         public DbSet<Business> DBBusiness { get; set; }
         public DbSet<Review> DBReview { get; set; }
-        public DbSet<Office> DBOffice { get; set; }    }
+        public DbSet<Office> DBOffice { get; set; }
+        public DbSet<Category> DBCatagory { get; set; }
+    }
 }

@@ -199,6 +199,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BusinessesController.cs" />
+    <Compile Include="Controllers\CategoriesController.cs" />
     <Compile Include="Controllers\ChartController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -209,61 +210,14 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201708220822102_FirstMigration.cs" />
-    <Compile Include="Migrations\201708220822102_FirstMigration.Designer.cs">
-      <DependentUpon>201708220822102_FirstMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201708220949094_SecondMigration.cs" />
-    <Compile Include="Migrations\201708220949094_SecondMigration.Designer.cs">
-      <DependentUpon>201708220949094_SecondMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201708220956200_FirstMigration1.cs" />
-    <Compile Include="Migrations\201708220956200_FirstMigration1.Designer.cs">
-      <DependentUpon>201708220956200_FirstMigration1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201708240738092_SeedAdded.cs" />
-    <Compile Include="Migrations\201708240738092_SeedAdded.Designer.cs">
-      <DependentUpon>201708240738092_SeedAdded.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201708240743255_TypeOfBussinessAdded.cs" />
-    <Compile Include="Migrations\201708240743255_TypeOfBussinessAdded.Designer.cs">
-      <DependentUpon>201708240743255_TypeOfBussinessAdded.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201708241027101_cityAddedTobussiness.cs" />
-    <Compile Include="Migrations\201708241027101_cityAddedTobussiness.Designer.cs">
-      <DependentUpon>201708241027101_cityAddedTobussiness.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201708241149262_addingOffices.cs" />
-    <Compile Include="Migrations\201708241149262_addingOffices.Designer.cs">
-      <DependentUpon>201708241149262_addingOffices.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201708241154353_addingOfficesUpdateManager.cs" />
-    <Compile Include="Migrations\201708241154353_addingOfficesUpdateManager.Designer.cs">
-      <DependentUpon>201708241154353_addingOfficesUpdateManager.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201708241912537_AVGrankAdded.cs" />
-    <Compile Include="Migrations\201708241912537_AVGrankAdded.Designer.cs">
-      <DependentUpon>201708241912537_AVGrankAdded.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201708241914160_AVGrankAdded1.cs" />
-    <Compile Include="Migrations\201708241914160_AVGrankAdded1.Designer.cs">
-      <DependentUpon>201708241914160_AVGrankAdded1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201708242051123_nameChageToReview.cs" />
-    <Compile Include="Migrations\201708242051123_nameChageToReview.Designer.cs">
-      <DependentUpon>201708242051123_nameChageToReview.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201708250943583_ReviewAdded.cs" />
-    <Compile Include="Migrations\201708250943583_ReviewAdded.Designer.cs">
-      <DependentUpon>201708250943583_ReviewAdded.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201708251038181_ReviewChanged.cs" />
-    <Compile Include="Migrations\201708251038181_ReviewChanged.Designer.cs">
-      <DependentUpon>201708251038181_ReviewChanged.cs</DependentUpon>
+    <Compile Include="Migrations\201708291807469_reorganizingDB.cs" />
+    <Compile Include="Migrations\201708291807469_reorganizingDB.Designer.cs">
+      <DependentUpon>201708291807469_reorganizingDB.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Business.cs" />
+    <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Office.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -324,6 +278,11 @@
     <Content Include="Scripts\_references.js" />
     <Content Include="Views\Businesses\_AdminIndex.cshtml" />
     <Content Include="Views\Businesses\_RegularIndex.cshtml" />
+    <Content Include="Views\Categories\Create.cshtml" />
+    <Content Include="Views\Categories\Delete.cshtml" />
+    <Content Include="Views\Categories\Details.cshtml" />
+    <Content Include="Views\Categories\Edit.cshtml" />
+    <Content Include="Views\Categories\Index.cshtml" />
     <None Include="Views\Chart\Index.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -390,44 +349,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201708220822102_FirstMigration.resx">
-      <DependentUpon>201708220822102_FirstMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201708220949094_SecondMigration.resx">
-      <DependentUpon>201708220949094_SecondMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201708220956200_FirstMigration1.resx">
-      <DependentUpon>201708220956200_FirstMigration1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201708240738092_SeedAdded.resx">
-      <DependentUpon>201708240738092_SeedAdded.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201708240743255_TypeOfBussinessAdded.resx">
-      <DependentUpon>201708240743255_TypeOfBussinessAdded.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201708241027101_cityAddedTobussiness.resx">
-      <DependentUpon>201708241027101_cityAddedTobussiness.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201708241149262_addingOffices.resx">
-      <DependentUpon>201708241149262_addingOffices.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201708241154353_addingOfficesUpdateManager.resx">
-      <DependentUpon>201708241154353_addingOfficesUpdateManager.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201708241912537_AVGrankAdded.resx">
-      <DependentUpon>201708241912537_AVGrankAdded.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201708241914160_AVGrankAdded1.resx">
-      <DependentUpon>201708241914160_AVGrankAdded1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201708242051123_nameChageToReview.resx">
-      <DependentUpon>201708242051123_nameChageToReview.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201708250943583_ReviewAdded.resx">
-      <DependentUpon>201708250943583_ReviewAdded.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201708251038181_ReviewChanged.resx">
-      <DependentUpon>201708251038181_ReviewChanged.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201708291807469_reorganizingDB.resx">
+      <DependentUpon>201708291807469_reorganizingDB.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
