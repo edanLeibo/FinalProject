@@ -29,7 +29,7 @@
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
-            context.DBCatagory.AddOrUpdate(x => x.CategoryID,
+            context.DBCategories.AddOrUpdate(x => x.CategoryID,
                new Category() { CategoryID = 1, CategoryName = "Food" },
                new Category() { CategoryID = 2, CategoryName = "Construction" },
                new Category() { CategoryID = 3, CategoryName = "Fashion" },
