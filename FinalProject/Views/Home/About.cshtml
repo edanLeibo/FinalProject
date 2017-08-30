@@ -3,23 +3,19 @@
     ViewBag.Title = "About";
 }
 <h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+<h3>Contact Infornation</h3>
 
 <address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
+    22 Migdal David Street<br />
+    Rehovot, Israel  98052<br />
+    03-9522248
 </address>
 
 <address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+    <strong>Support:</strong>   <a href="mailto:Support@MyBiz.com">Support@MyBiz.com</a><br />
+    <strong>Marketing:</strong> <a href="mailto:Marketing@MyBiz.com">Marketing@MyBiz.com</a>
 </address>
-<button type="button" onclick="location.href='@Url.Action("Index", "Businesses")'">Watch all businesses</button>
-<!-- javascript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
+
 
 <script type="text/javascript">
 
@@ -61,27 +57,13 @@
     		//amount to move
     		x += dx;
 		}
-
 </script>
 
-
-
-<!DOCTYPE html>
-
-<html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <title>HTML5 Canvas Slideshow | Script Tutorials</title>
     <link href="css/main.css" rel="stylesheet" type="text/css" />
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="js/pixastic.custom.js"></script>
     <script src="js/script.js"></script>
-</head>
-<body>
-    <header>
-        <h2>HTML5 Canvas Slideshow</h2>
-        <a href="https://www.script-tutorials.com/html5-canvas-slideshow/" class="stuts">Back to original tutorial on <span>Script Tutorials</span></a>
-    </header>
+
     <div class="container">
         <div class="slides">
             <img src="~/images/imageedit_11_3678298637.jpg"  style='height: 800px; width: 800px; object-fit: contain;background-size: contain''/>
@@ -90,10 +72,8 @@
             <img src="~/images/imageedit_7_9978923469.jpg" style='height: 800px; width: 800px; object-fit: contain ;background-size: contain''/>
             <img src="~/images/imageedit_9_7879279680.jpg" style='height: 800px; width: 800px; object-fit: contain ;background-size: contain' />
         </div>
-        <canvas id="slideshow" width="900" height="300"></canvas>
+        <canvas id="slideshow" width="600" height="200"></canvas>
     </div>
-</body>
-</html>
 
 
 

@@ -3,7 +3,7 @@ namespace FinalProject.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class bugfixattemp : DbMigration
+    public partial class xx : DbMigration
     {
         public override void Up()
         {

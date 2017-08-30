@@ -3,40 +3,16 @@
     ViewBag.Title = "Index";
 }
 <link rel="stylesheet" type="text/css" href="~/Content/AdminPage.css">
-<script src="~/Scripts/jquery-1.10.2.min.js"></script>
-<script type="text/javascript" src="https://www.google.com/jsapi"></script>
-<script type="text/javascript">
+<div style="text-align:center">
+    <input class="btn" type="button" value="Company Offices" onclick="location.href='@Url.Action("Index","Offices")'" />
+    <input class="btn" type="button" value="Reviews" onclick="location.href='@Url.Action("Index","Reviews")'" />
+    <input class="btn" type="button" value="Businesses" onclick="location.href='@Url.Action("Index","Businesses")'" />
+    <input class="btn" type="button" value="Businesses Categories" onclick="location.href='@Url.Action("Index","Categories")'" />
+    <br />
 
-    google.load("visualization", "1", { packages: ["corechart"] });
-    google.setOnLoadCallback(drawChart);
-
-    function drawChart() {
-        // Create and populate the data table.
-        var month =[@Model.ReviewCountData.Month];
-        var count =[ @Model.ReviewCountData.Count];
-
-
-        var data = new google.visualization.DataTable();
-        data.addColumn('string', '@Model.Title');
-        data.addColumn('number', '@Model.CountTitle');
-        var _Month = [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ];
-        for (i = 0; i < month.length; i++) {
-                    data.addRow([_Month[month[i] - 1].toString(), count[i]]);
-        }
-        var options = {
-            title: 'Annual Review Count',
-            hAxis: { title: '@Model.Title', titleTextStyle: { color: 'red' } }
-        };
-
-        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
-        chart.draw(data, options);
-    }
-</script>
-
-      <input class ="btn" type="button" value="Company Offices" onclick="location.href='@Url.Action("Index","Offices")'" />
-      <input class ="btn" type="button" value="Reviews" onclick="location.href='@Url.Action("Index","Reviews")'" />
-      <input class ="btn" type="button" value="Businesses" onclick="location.href='@Url.Action("Index","Businesses")'" />
-      <input class="btn" type="button" value="Businesses Categories" onclick="location.href='@Url.Action("Index","Categories")'" />
-      <div id="chart_div" style="width: 600px; height: 300px;"></div>
+    @Html.Partial("_ReviewsPerMonth", Model);
+    @Html.Partial("_BusinessesPerCategory", Model);
+    @Html.Partial("_topFive", Model);
+</div>
 
 
