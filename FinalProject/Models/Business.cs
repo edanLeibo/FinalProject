@@ -45,12 +45,6 @@ namespace EX5.Models
         [Display(Name = "Rank")]
         public double AVGrank { get; set; }
 
-        [Display(Name = "Photo")]
-        public string Photo { get; set; }
-
-        [Display(Name = "Video")]
-        public string Video { get; set; }
-
         public int CategoryID { get; set; }
 
         public Category Category { get; set; }

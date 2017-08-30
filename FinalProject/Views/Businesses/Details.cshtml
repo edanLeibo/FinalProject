@@ -137,17 +137,6 @@
     </dl>
 </div>
 
-@if (@Html.Raw(Model.Photo) != null)
-{
-    <img src=@Html.Raw(Model.Photo) alt="Mountain View" style="width:304px;height:228px;">
-}
-
-@if (@Html.Raw(Model.Video) != null)
-{
-    <iframe src="@Html.Raw(Model.Video)" width="304px" height="228px" frameborder="0" allowfullscreen></iframe>
-}
-
-
 
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
