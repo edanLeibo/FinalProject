@@ -1754,6 +1754,7 @@ textarea.form-control {
 
 .form-group {
   margin-bottom: 15px;
+  display:flex;
 }
 
 .radio,
@@ -1969,6 +1970,7 @@ textarea.input-lg {
 .form-horizontal .form-group {
   margin-right: -15px;
   margin-left: -15px;
+  display:flex;
 }
 
 .form-horizontal .form-group:before,
