@@ -22,9 +22,28 @@ namespace EX5.Controllers
         }
 
         // GET: Businesses
-        public ActionResult Index(string BusinessName,string Category, string StreetAddress, string City)
+        public ActionResult Index(string BusinessName, string Category, string StreetAddress, string City)
         {
-            var Bussinesses = from s in db.DBBusiness select s;
+            var Bussinesses1 = (from s in db.DBBusiness select s).ToList();
+
+
+            var Bussinesses = from s in Bussinesses1
+                              select new Business()
+                              {
+                                  BusinessID = s.BusinessID,
+                                  BusinessName = s.BusinessName,
+                                  Owner = s.Owner,
+                                  PhoneNumber = s.PhoneNumber,
+                                  StreetAddress = s.StreetAddress,
+                                  City = s.City,
+                                  Website = s.Website,
+                                  Description = s.Description,
+                                  AVGrank = s.AVGrank,
+                                  CategoryID = s.CategoryID,
+                                  Category = db.DBCategories.Where(x => x.CategoryID == s.CategoryID).FirstOrDefault()
+                              };
+
+            var category = db.DBCategories.Where(x => x.CategoryID == Bussinesses.Select(y => y.CategoryID).First());
             if (!String.IsNullOrEmpty(BusinessName))
             {
                 Bussinesses = Bussinesses.Where(s => s.BusinessName.ToLower().Contains(BusinessName.ToLower()));
@@ -41,10 +60,9 @@ namespace EX5.Controllers
             {
                 Bussinesses = Bussinesses.Where(s => s.City.ToLower().Contains(City.ToLower()));
             }
-
             return View(Bussinesses);
         }
-          
+
         // GET: Businesses/Details/5
         public ActionResult Details(int? id)
         {
@@ -63,6 +81,7 @@ namespace EX5.Controllers
         // GET: Businesses/Create
         public ActionResult Create()
         {
+            ViewBag.CategoryID = new SelectList(db.DBCategories.ToList(), "CategoryID", "CategoryName");
             return View();
         }
 
@@ -72,7 +91,7 @@ namespace EX5.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,BusinessName,Type,Owner,PhoneNumber,Address,Website,Description,AVGrank,Photo,Video")] Business business)
+        public ActionResult Create([Bind(Include = "ID,BusinessName,CategoryID,Type,Owner,PhoneNumber,Address,Website,Description,StreetAddress,City,AVGrank,Photo,Video")] Business business)
         {
             if (ModelState.IsValid)
             {
@@ -91,6 +110,7 @@ namespace EX5.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+            ViewBag.CategoryID = new SelectList(db.DBCategories.ToList(), "CategoryID", "CategoryName");
             Business business = db.DBBusiness.Find(id);
             if (business == null)
             {
@@ -104,7 +124,7 @@ namespace EX5.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,BusinessName,Type,Owner,PhoneNumber,StreetAddress,City,Website,Description,AVGrank,Photo,Video")] Business business)
+        public ActionResult Edit([Bind(Include = "BusinessID,CategoryID,BusinessName,Type,Owner,PhoneNumber,StreetAddress,City,Website,Description,AVGrank,Photo,Video")] Business business)
         {
             if (ModelState.IsValid)
             {
@@ -149,7 +169,7 @@ namespace EX5.Controllers
             double newRank = (size * business.AVGrank + rank) / (size + 1);
             business.AVGrank = Convert.ToDouble(String.Format("{0:0.0}", newRank));
             db.SaveChanges();
-            return Json(new { AVGrank= business.AVGrank});
+            return Json(new { AVGrank = business.AVGrank });
         }
 
         protected override void Dispose(bool disposing)
