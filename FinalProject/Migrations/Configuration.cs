@@ -1,4 +1,4 @@
-﻿namespace FinalProject.Migrations
+namespace FinalProject.Migrations
 {
     using EX5.Models;
     using Models;
@@ -12,12 +12,23 @@
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "FinalProject.Dal.GeneralDbContext";
         }
 
         protected override void Seed(FinalProject.Dal.GeneralDbContext context)
         {
+            //  This method will be called after migrating to the latest version.
 
+            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
+            //  to avoid creating duplicate seed data. E.g.
+            //
+            //    context.People.AddOrUpdate(
+            //      p => p.FullName,
+            //      new Person { FullName = "Andrew Peters" },
+            //      new Person { FullName = "Brice Lambson" },
+            //      new Person { FullName = "Rowan Miller" }
+            //    );
+            //
+            
             context.DBCategories.AddOrUpdate(x => x.CategoryID,
                new Category() { CategoryID = 1, CategoryName = "Food" },
                new Category() { CategoryID = 2, CategoryName = "Construction" },
@@ -34,7 +45,7 @@
             new Business() { BusinessID = 4, BusinessName = "Giraffe", CategoryID = 1, StreetAddress = "18 Samuel st.", City = "Haifa", Website = "www.giraffe.co.il", Photo = "", Description = "This restaurant offers a new twist to familiar dishes from all over the world.", Owner = "Peter Parker", Video = "", PhoneNumber = "04-7567709", AVGrank = 3.2 },
             new Business() { BusinessID = 5, BusinessName = "Etzh", CategoryID = 2, StreetAddress = "32 Rotenberg st.", City = "Jerusalem", Website = "www.etzhashaked.co.il", Photo = "", Description = "Engaged in entrepreneurship, contracting and management of privately owned investments, with an emphasis on residential projects.", Owner = "Arad Nir", Video = "", PhoneNumber = "02-6555902", AVGrank = 4.6 },
             new Business() { BusinessID = 6, BusinessName = "Adler", CategoryID = 2, StreetAddress = "14 King David st.", City = "Tel Aviv", Website = "www.adlers.co", Photo = "", Description = "Adler Construction specialized in the overall management of construction initiative projects, of any kind and at any scale.", Owner = "Yogev Ohayon", Video = "", PhoneNumber = "03-9432211", AVGrank = 4 },
-            new Business() { BusinessID = 7, BusinessName = "Shikun", CategoryID = 2, StreetAddress = "12 HaYarkon st.", City = "Haifa", Website = "www.shikunbinui.co.il", Photo = "", Description = "Israel’s leading infrastructure and real estate group. Involved in large-scale construction of residential neighborhoods and public buildings.", Owner = "Fred Rose", Video = "", PhoneNumber = "04-9432211", AVGrank = 3.5 },
+            new Business() { BusinessID = 7, BusinessName = "Shikun", CategoryID = 2, StreetAddress = "12 HaYarkon st.", City = "Haifa", Website = "www.shikunbinui.co.il", Photo = "", Description = "Israel�s leading infrastructure and real estate group. Involved in large-scale construction of residential neighborhoods and public buildings.", Owner = "Fred Rose", Video = "", PhoneNumber = "04-9432211", AVGrank = 3.5 },
             new Business() { BusinessID = 8, BusinessName = "Africa", CategoryID = 2, StreetAddress = "114 Ben Gurion st.", City = "Jerusalem", Website = "www.africa-israel.co.il", Photo = "", Description = "An international holdings and investments group. It's active worldwide and focuses on projects of real-estate, construction, industry and hotels.", Owner = "Sarah Farmer", Video = "", PhoneNumber = "02-4788322", AVGrank = 2.5 },
             new Business() { BusinessID = 9, BusinessName = "Golf", CategoryID = 3, StreetAddress = "28 Ratner st.", City = "Tel Aviv", Website = "www.golfgroup.co.il", Photo = "", Description = "A leading fashion company, specializing in both casual and elegant clothing for both men and women.", Owner = "Jenny Blake", Video = "", PhoneNumber = "03-5784455", AVGrank = 4.8 },
             new Business() { BusinessID = 10, BusinessName = "Renuar", CategoryID = 3, StreetAddress = "50 Joe Alon st.", City = "Haifa", Website = "www.renuar.co.il", Photo = "", Description = "One of the top 5 fashon companies in Israel. Designing clothes for the whole family.", Owner = "Sivan Tadmor", Video = "", PhoneNumber = "04-9234452", AVGrank = 2.3 },
@@ -43,7 +54,7 @@
             new Business() { BusinessID = 13, BusinessName = "Partner", CategoryID = 4, StreetAddress = "16 Herzog st.", City = "Haifa", Website = "www.partner.co.il", Photo = "", Description = "A leading internet company. Offers high-speed internet connection for low prices", Owner = "Shira Marom", Video = "", PhoneNumber = "04-5784455", AVGrank = 3.3 },
             new Business() { BusinessID = 14, BusinessName = "Netvision", CategoryID = 4, StreetAddress = "2 Dori st.", City = "Jerusalem", Website = "netvision.cellcom.co.il", Photo = "", Description = "The first internet company in Israel. Offers free installtion and 'pay-as-you-go' payment planns.", Owner = "Matan Navon", Video = "", PhoneNumber = "02-9234452", AVGrank = 2 },
             new Business() { BusinessID = 15, BusinessName = "TripleC", CategoryID = 4, StreetAddress = "21 Shazar st.", City = "Tel Aviv", Website = "www.ccc.co.il", Photo = "", Description = "A new internet company, offers internet as well as phone and TV services.", Owner = "Rinat Avraham",	Video = "", PhoneNumber = "03 - 7567709", AVGrank = 4.1 },
-            new Business() { BusinessID = 16, BusinessName = "Hot", CategoryID = 4, StreetAddress = "18 Adar st.", City = "Haifa", Website = "www.hot.net.il", Photo = "", Description = "An internet company which serves more than half of Israel’s internet users.", Owner = "Meni Beger", Video = "", PhoneNumber = "04-7567709", AVGrank = 3.2 }
+            new Business() { BusinessID = 16, BusinessName = "Hot", CategoryID = 4, StreetAddress = "18 Adar st.", City = "Haifa", Website = "www.hot.net.il", Photo = "", Description = "An internet company which serves more than half of Israel�s internet users.", Owner = "Meni Beger", Video = "", PhoneNumber = "04-7567709", AVGrank = 3.2 }
         );
 
             context.DBReview.AddOrUpdate(x => x.ReviewID,
@@ -57,7 +68,7 @@
                 new Review() { ReviewID = 8, BusinessID = 3, Author = "levi.pingi@gmail.com", Date = new DateTime(2017, 4, 8), Description = "This is an excellent place to eat. Everything here is good: the staff, the food, the environment. It was very neat and clean. I was with my friends there and we really enjoyed our meal." },
                 new Review() { ReviewID = 9, BusinessID = 3, Author = "brainiac@gmail.com", Date = new DateTime(2016, 9, 9), Description = "Excellent food, super service, we could even store our luggage. Lovely garden. Our first choice place in Tel Aviv. Thanks!" },
                 new Review() { ReviewID = 10, BusinessID = 4, Author = "crazyReviewer@gmail.com", Date = new DateTime(2016, 10, 10), Description = "Extensive breakfast, very lovely and tasty dishes such as the local shaksuka, various local breads and salads. Coffee was not good.... service was slow" },
-                new Review() { ReviewID = 11, BusinessID = 4, Author = "toto@gmail.com", Date = new DateTime(2017, 5, 11), Description = "We were attracted to this restaurant by the classy décor, unfortunately the food was not so good. Our fish was overcooked and the vegetables mediocre." },
+                new Review() { ReviewID = 11, BusinessID = 4, Author = "toto@gmail.com", Date = new DateTime(2017, 5, 11), Description = "We were attracted to this restaurant by the classy d?cor, unfortunately the food was not so good. Our fish was overcooked and the vegetables mediocre." },
                 new Review() { ReviewID = 12, BusinessID = 4, Author = "meni@gmail.com", Date = new DateTime(2017, 6, 12), Description = "It was a wonderful evening at Giraffe. Champagne, appetizers, cheese and wine were so amazing... Enjoyed it very much!" },
                 new Review() { ReviewID = 13, BusinessID = 5, Author = "JackBlack@gmail.com", Date = new DateTime(2016, 11, 13), Description = "Just completed a remodel with an addition and it came out awesome. Me and my wife Beth were so pleased with everything, we can't believe it's our house." },
                 new Review() { ReviewID = 14, BusinessID = 5, Author = "TamiCohen@gmail.com", Date = new DateTime(2016, 12, 14), Description = "They did a great job with our house, highly recommended!  They did our bathroom, floors, lights as well as some electrical work.  Great price and friendly, and very trustworthy." },
@@ -105,11 +116,11 @@
                 new Office() { OfficeID = 4, Manager = "Michael Yarden", City = "Beer Sheva", Street = "Yitzhak Rager", HouseNumber = "39", Latitude = 31.251601, Longitude = 34.798025 },
                 new Office() { OfficeID = 5, Manager = "Monica Clinton", City = "Tiberias", Street = "Michael", HouseNumber = "22", Latitude = 32.794648, Longitude = 35.532391 },
                 new Office() { OfficeID = 6, Manager = "Adam Cohen", City = "Eilat", Street = "Los Angeles", HouseNumber = "58", Latitude = 29.560059, Longitude = 34.941117 },
-                new Office() { OfficeID = 7, Manager = "Khloé Kardashian", City = "Ashkelon", Street = "Kislev", HouseNumber = "46", Latitude = 31.673538, Longitude = 34.580925 },
+                new Office() { OfficeID = 7, Manager = "Khlo? Kardashian", City = "Ashkelon", Street = "Kislev", HouseNumber = "46", Latitude = 31.673538, Longitude = 34.580925 },
                 new Office() { OfficeID = 8, Manager = "Kanye Omari West", City = "Afula", Street = "Shprinzak", HouseNumber = "233", Latitude = 32.610551, Longitude = 35.293307 },
                 new Office() { OfficeID = 9, Manager = "Donatelo da Vinci ", City = "Kiryat Shmona", Street = "Arlozerov", HouseNumber = "67", Latitude = 33.207793, Longitude = 35.568489 }
                  );
-
+                 
         }
     }
 }

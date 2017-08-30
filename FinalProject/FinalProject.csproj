@@ -210,9 +210,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201708292151250_xx.cs" />
-    <Compile Include="Migrations\201708292151250_xx.Designer.cs">
-      <DependentUpon>201708292151250_xx.cs</DependentUpon>
+    <Compile Include="Migrations\201708300801083_try1.cs" />
+    <Compile Include="Migrations\201708300801083_try1.Designer.cs">
+      <DependentUpon>201708300801083_try1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -228,23 +228,23 @@
     <Compile Include="ViewModel\ReviewDateGroup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\AdminPage.css" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\BusiDetails.css" />
-    <Content Include="Content\local-small-business-ss-1920.jpg" />
-    <Content Include="Content\main.css" />
-    <Content Include="Content\Arik.mp4" />
-    <Content Include="Content\myStylesheet.css" />
-    <Content Include="Content\opening.mp4" />
-    <Content Include="Content\RegularBusinessStyle.css" />
-    <Content Include="Content\starsStylesheet.css" />
-    <Content Include="Content\style.css" />
-    <Content Include="Content\BusinessesPerCategoryStylesheet.css" />
+    <Content Include="App_Start\Content\AdminPage.css" />
+    <Content Include="App_Start\Content\bootstrap.css" />
+    <Content Include="App_Start\Content\bootstrap.min.css" />
+    <Content Include="App_Start\Content\BusiDetails.css" />
+    <Content Include="App_Start\Content\local-small-business-ss-1920.jpg" />
+    <Content Include="App_Start\Content\main.css" />
+    <Content Include="App_Start\Content\Arik.mp4" />
+    <Content Include="App_Start\Content\myStylesheet.css" />
+    <Content Include="App_Start\Content\opening.mp4" />
+    <Content Include="App_Start\Content\RegularBusinessStyle.css" />
+    <Content Include="App_Start\Content\starsStylesheet.css" />
+    <Content Include="App_Start\Content\style.css" />
+    <Content Include="App_Start\Content\BusinessesPerCategoryStylesheet.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
+    <Content Include="App_Start\Content\Site.css" />
     <Content Include="images\flower.png" />
     <Content Include="images\imageedit_11_3678298637.jpg" />
     <Content Include="images\imageedit_3_4931344117.png" />
@@ -264,7 +264,7 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config" />
-    <Content Include="Content\SansationLight.woff" />
+    <Content Include="App_Start\Content\SansationLight.woff" />
     <None Include="Scripts\jquery-1.10.2-vsdoc.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -355,8 +355,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201708292151250_xx.resx">
-      <DependentUpon>201708292151250_xx.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201708300801083_try1.resx">
+      <DependentUpon>201708300801083_try1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
