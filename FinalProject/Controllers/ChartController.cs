@@ -50,6 +50,73 @@ namespace FinalProject.Controllers
             }
         }
 
+        //Data for graph it shows how much Business in each category
+        public JsonResult categoriesGraph()
+        {
+
+            List<Result> numOfBusinesses = new List<Result>();
+
+            //Perform join to get all relevant categories
+            var myQuery = from c in db.DBCategories
+                        join b in db.DBBusiness on c.CategoryID equals b.CategoryID
+                        select c;
+
+            //Now we group it by category name and count it
+            var myGroup = from t in myQuery
+                          group t by t.CategoryName into cat
+                          select new
+                          {
+                            CategoryName = cat.Key,
+                            amount = cat.Count()
+                          };
+            //Make it in the right form for the view
+            foreach (var item in myGroup)
+            {
+                Result numBusinesses = new Result();
+                numBusinesses.State = item.CategoryName;
+                numBusinesses.freq = item.amount;
+                numOfBusinesses.Add(numBusinesses);
+            }
+
+            return Json(numOfBusinesses, JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult topFiveGraph()
+        {
+
+            List<Result> numOfReviews = new List<Result>();
+
+            /*Join by BusinessID*/
+            var myQuery = from b in db.DBBusiness
+                          join r in db.DBReview on b.BusinessID equals r.BusinessID
+                        select b;
+
+
+            /*now we group it for the graph*/
+            var myGroup = from t in myQuery
+                        group t by t.BusinessName into cat
+                        select new
+                        {
+                            cName = cat.Key,
+                            Num = cat.Count()
+                        };
+
+            var myQuery2 = (from y in @myGroup
+                         where y.Num >= 1
+                         orderby y.Num
+                         select y).Take(5);
+
+            foreach (var item in myQuery2)
+            {
+                Result numReviews = new Result();
+                numReviews.State = item.cName;
+                numReviews.freq = item.Num;
+                numOfReviews.Add(numReviews);
+            }
+
+            return Json(numOfReviews, JsonRequestBehavior.AllowGet);
+        }
+
         // GET: Chart/Details/5
         public ActionResult Details(int id)
         {

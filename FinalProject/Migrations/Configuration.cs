@@ -17,25 +17,15 @@
 
         protected override void Seed(FinalProject.Dal.GeneralDbContext context)
         {
-            //  This method will be called after migrating to the latest version.
 
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
             context.DBCategories.AddOrUpdate(x => x.CategoryID,
                new Category() { CategoryID = 1, CategoryName = "Food" },
                new Category() { CategoryID = 2, CategoryName = "Construction" },
                new Category() { CategoryID = 3, CategoryName = "Fashion" },
-               new Category() { CategoryID = 4, CategoryName = "Internet" }
+               new Category() { CategoryID = 4, CategoryName = "Internet" },
+               new Category() { CategoryID = 5, CategoryName = "Kitchen" },
+               new Category() { CategoryID = 6, CategoryName = "Music" }
             );
-
 
            context.DBBusiness.AddOrUpdate(x => x.BusinessID,
             new Business() { BusinessID = 1, BusinessName = "Cafe Cafe", CategoryID = 1, StreetAddress = "12 Hashalom st.", City = "Haifa", Website = "www.cafecafe.co.il", Photo = "", Description = "One of the most successful coffee houses in Israel, offering quality coffee and dairy food.", Owner = "David Colman", Video = "", PhoneNumber = "04-4788322", AVGrank = 4.5 },
