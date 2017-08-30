@@ -282,13 +282,18 @@
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\Script.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Views\Businesses\_AdminIndex.cshtml" />
-    <Content Include="Views\Businesses\_RegularIndex.cshtml" />
     <Content Include="Views\Categories\Create.cshtml" />
     <Content Include="Views\Categories\Delete.cshtml" />
     <Content Include="Views\Categories\Details.cshtml" />
     <Content Include="Views\Categories\Edit.cshtml" />
     <Content Include="Views\Categories\Index.cshtml" />
+    <Content Include="Views\Businesses\_AdminIndex.cshtml" />
+    <Content Include="Views\Businesses\Create.cshtml" />
+    <Content Include="Views\Businesses\Delete.cshtml" />
+    <Content Include="Views\Businesses\Details.cshtml" />
+    <Content Include="Views\Businesses\Edit.cshtml" />
+    <Content Include="Views\Businesses\Index.cshtml" />
+    <Content Include="Views\Businesses\_RegularIndex.cshtml" />
     <None Include="Views\Chart\Index.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -324,11 +329,6 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Businesses\Create.cshtml" />
-    <Content Include="Views\Businesses\Delete.cshtml" />
-    <Content Include="Views\Businesses\Details.cshtml" />
-    <Content Include="Views\Businesses\Edit.cshtml" />
-    <Content Include="Views\Businesses\Index.cshtml" />
     <Content Include="Views\Offices\Create.cshtml" />
     <Content Include="Views\Offices\Delete.cshtml" />
     <Content Include="Views\Offices\Details.cshtml" />
@@ -346,6 +346,7 @@
     <Content Include="Views\Chart\_BusinessesPerCategory.cshtml" />
     <Content Include="Views\Chart\_topFive.cshtml" />
     <Content Include="Views\View.cshtml" />
+    <Content Include="Views\edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -8,7 +8,9 @@
     HashSet<string> allCities = new HashSet<string>();
     foreach (var b in Model)
     {
-        allCities.Add(b.City.ToLower());
+        if (b.City != null) {
+            allCities.Add(b.City.ToLower());
+        }
     }
 
 }
@@ -38,5 +40,5 @@
 }
 else
 {
-    @Html.Partial("_RegularIndex", Model);
+        @Html.Partial("_RegularIndex", Model);
 }
