@@ -21,7 +21,7 @@ namespace FinalProject.Controllers
         public ActionResult Index(int? officeID, string city, string manager)
         {
             var Offices = from o in db.DBOffice select o;
-            if (!(officeID==null))
+            if (!(officeID == null))
             {
                 Offices = Offices.Where(s => s.OfficeID.Equals(officeID));
             }
@@ -63,7 +63,7 @@ namespace FinalProject.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "OfficeID,BusinessName,City,Street,HouseNumber,Latitude,Longitude,Owner")] Office office)
+        public ActionResult Create([Bind(Include = "OfficeID,BusinessName,City,Street,HouseNumber,Latitude,Longitude,Owner,Manager")] Office office)
         {
             if (ModelState.IsValid)
             {
@@ -95,7 +95,7 @@ namespace FinalProject.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "OfficeID,BusinessName,City,Street,HouseNumber,Latitude,Longitude,Owner")] Office office)
+        public ActionResult Edit([Bind(Include = "OfficeID,BusinessName,City,Street,HouseNumber,Latitude,Longitude,Owner,Manager")] Office office)
         {
             if (ModelState.IsValid)
             {
