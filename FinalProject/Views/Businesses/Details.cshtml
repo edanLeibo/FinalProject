@@ -69,7 +69,7 @@
         <pstyle>
             @if (User.Identity.Name.Equals("admin@gmail.com"))
             {
-                @Html.ActionLink("Edit", "Edit", new { id = Model.BusinessID })
+                <button type="button" id="EditButton" onclick="window.location='/businesses/Edit/'+ @Model.BusinessID">Edit</button>
             }
 
             <button type="button" id="BackButton" onclick="window.location='/businesses'">Back to List of Businesses</button>
