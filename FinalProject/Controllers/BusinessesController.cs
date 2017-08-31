@@ -26,7 +26,6 @@ namespace EX5.Controllers
         {
             var Bussinesses1 = (from s in db.DBBusiness select s).ToList();
 
-
             var Bussinesses = from s in Bussinesses1
                               select new Business()
                               {
@@ -42,8 +41,6 @@ namespace EX5.Controllers
                                   CategoryID = s.CategoryID,
                                   Category = db.DBCategories.Where(x => x.CategoryID == s.CategoryID).FirstOrDefault()
                               };
-
-            var category = db.DBCategories.Where(x => x.CategoryID == Bussinesses.Select(y => y.CategoryID).First());
             if (!String.IsNullOrEmpty(BusinessName))
             {
                 Bussinesses = Bussinesses.Where(s => s.BusinessName.ToLower().Contains(BusinessName.ToLower()));
@@ -143,6 +140,9 @@ namespace EX5.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Business business = db.DBBusiness.Find(id);
+            business.Category = db.DBCategories.Where(x => x.CategoryID == business.CategoryID).FirstOrDefault();
+            //var Bussinesses1 = db.DBBusiness.Find(id);
+
             if (business == null)
             {
                 return HttpNotFound();
