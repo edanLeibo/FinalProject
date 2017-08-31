@@ -16,7 +16,7 @@ namespace FinalProject.Controllers
         private GeneralDbContext db = new GeneralDbContext();
 
         // GET: Reviews
-        public ActionResult Index(string businessName,string author, string description)
+        public ActionResult Index(string businessName, string author, string description)
         {
             var dBReview = db.DBReview.Include(r => r.Business);
             if (!String.IsNullOrEmpty(businessName))
@@ -62,17 +62,16 @@ namespace FinalProject.Controllers
         // GET: Reviews/Create
         public ActionResult Create(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Business business = db.DBBusiness.Find(id);
-            if (business == null)
-            {
-                return HttpNotFound();
-            }
-            ViewBag.BusinessID = new SelectList(db.DBBusiness, "BusinessID", "BusinessName", business.BusinessID);
-            return View(); 
+            //if (id == null)
+            //{
+            //    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            //}
+            //if (business == null)
+            //{
+            //    return HttpNotFound();
+            //}
+            ViewBag.BusinessID = new SelectList(db.DBBusiness.ToList(), "BusinessID", "BusinessName");
+            return View();
         }
 
         // POST: Reviews/Create
@@ -96,7 +95,6 @@ namespace FinalProject.Controllers
         // GET: Reviews/Edit/5
         public ActionResult Edit(int? id)
         {
-            /**
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -108,8 +106,7 @@ namespace FinalProject.Controllers
             }
             ViewBag.BusinessID = new SelectList(db.DBBusiness, "BusinessID", "BusinessName", review.BusinessID);
             return View(review);
-    **/
-            return Json(id);
+            //return Json(id);
         }
 
         // POST: Reviews/Edit/5
