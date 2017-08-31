@@ -97,8 +97,8 @@
                 position: relative;
                 z-index: 5;
             }
-</style>
-    <ul class="u">
+</style >
+    <ul class="u" style="margin-bottom:285px">
         @foreach (var item in Model)
         {
             <li onclick="location.href='@Url.Action("Details","Businesses",new { id = item.BusinessID })'">
