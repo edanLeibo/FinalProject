@@ -141,6 +141,7 @@ nav {
     left: 0;
     width: 100%;
     background: linear-gradient(#6b8298, #353434);
+    min-height:70px;
 }
 
     nav ul {
@@ -414,17 +415,21 @@ form {
 /*------------------------------
 =FOOTER
 ------------------------------*/
-footer {
-    position: absolute;
+.footer {
+    position:absolute;
+    bottom: 0px;
+    width:100%;
+}
+.inner{
+    position: relative;
     left: 0;
     width: 100%;
     background: #222;
-    bottom: 0px;
+
     /**
     position: relative;
         */
 }
-
     footer div {
         /**
         display: table;
@@ -436,12 +441,12 @@ footer {
 
     }
 
-        footer div section {
+        .footer div section {
             display: table-cell;
             width: 300px;
         }
 
-        footer div #about, footer div #blogroll {
+        .footer div #about, footer div #blogroll {
             padding-right: 20px;
         }
 
@@ -468,7 +473,9 @@ footer {
             display: block;
         }
 
-
+#push{
+    margin-bottom:200px;
+}
 /* rss style */
 #transDemo2 div {
     height: 30px;

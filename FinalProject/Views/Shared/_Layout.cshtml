@@ -6,6 +6,8 @@
     <!--Place here css and javascript files-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <link rel="stylesheet" href="~/Content/main.css" type="text/css" media="screen" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
@@ -52,7 +54,7 @@
                 @Html.Partial("_LoginPartial")
         </div>
     </nav>
-
+  
 
         
 
@@ -71,15 +73,18 @@
         </aside>
         <footer>
             <!-- Footer -->
-            <div>
-                <section id="fb">
-                    <div id="fb-root"></div>
-                    <div class="fb-page" data-href="https://www.facebook.com/MyBiz-334661623631843/" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false"></div>
-                </section>
-                <section id="about">
-                    <h3>Copyright © MyBiz.co.il</h3>
-                </section>
-            </div>
+
+            <div class="footer">
+                <div class="inner">
+                    <section id="fb">
+                        <div id="fb-root"></div>
+                        <div class="fb-page" data-href="https://www.facebook.com/MyBiz-334661623631843/" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false"></div>
+                    </section>
+                    <section id="about">
+                        <h3>Copyright © MyBiz.co.il</h3>
+                    </section>
+                </div>
+             </div>
         </footer>
 
         @Scripts.Render("~/bundles/jquery")
