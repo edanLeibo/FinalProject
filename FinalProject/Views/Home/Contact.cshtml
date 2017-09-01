@@ -10,11 +10,11 @@
 @using (Html.BeginForm())
 {
     <p>
-        Office Id number: @Html.TextBox("officeID")
+        Street: @Html.TextBox("Street")
         City: @Html.TextBox("city")
         Manager: @Html.TextBox("manager")
-        <input type="submit" value="Search" />
-        <input type="button" value="Show all" onclick="location.href='@Url.Action("Index")'" />
+        <input type="submit" value="Filter" class="btn btn-danger" />
+        <input type="button" value="Show all" onclick="location.href='@Url.Action("Contact")'" class="btn btn-danger"/>
     </p>
 }
 <div id="pageContent" style="min-width=600px">

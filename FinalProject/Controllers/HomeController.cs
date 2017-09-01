@@ -23,11 +23,23 @@ namespace EX5.Controllers
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult Contact(string Street, string city, string manager)
         {
-            ViewBag.Message = "Your contact page.";
+            var Offices = from o in db.DBOffice select o;
+            if (!String.IsNullOrEmpty(Street))
+            {
+                Offices = Offices.Where(s => s.Street.ToLower().Contains(Street.ToLower()));
+            }
+            if (!String.IsNullOrEmpty(city))
+            {
+                Offices = Offices.Where(s => s.City.ToLower().Contains(city.ToLower()));
+            }
+            if (!String.IsNullOrEmpty(manager))
+            {
+                Offices = Offices.Where(s => s.Manager.ToLower().Contains(manager.ToLower()));
+            }
 
-            return View(db.DBOffice);
+            return View(Offices);
         }
     }
 }

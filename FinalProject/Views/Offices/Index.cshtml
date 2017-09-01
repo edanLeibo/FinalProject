@@ -16,8 +16,8 @@
         Street: @Html.TextBox("Street")
         City: @Html.TextBox("city")
         Manager: @Html.TextBox("manager")
-        <input type="submit" value="Search" />
-        <input type="button" value="Show all" onclick="location.href='@Url.Action("Index")'" />
+        <input type="submit" value="Search" class="btn btn-danger"/>
+        <input type="button" value="Show all" onclick="location.href='@Url.Action("Index")'" class="btn btn-danger" />
     </p>
 }
 <table class="table">
@@ -87,12 +87,6 @@
 
 </table>
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Simple Map</title>
-    <meta name="viewport" content="initial-scale=1.0">
-    <meta charset="utf-8">
     <style>
         /* Always set the map height explicitly to define the size of the div
         * element that contains the map. */
@@ -106,9 +100,6 @@
             padding: 0;
         }
     </style>
-
-</head>
-<body>
 
     <script>
 
@@ -195,5 +186,3 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBz6T_-pt82oRbHIpMHvVQakDH6PzZ31C8&callback=initMap"
             async defer></script>
          -->
-</body>
-</html>

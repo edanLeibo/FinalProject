@@ -18,16 +18,17 @@
     @foreach (var item in Model)
     {
         <div class="accordion-header"> @Html.DisplayFor(modelItem => item.City)</div>
-        <div class="accordion-content"> House number: @Html.DisplayFor(modelItem => item.HouseNumber) <br />Street: @Html.DisplayFor(modelItem => item.Street)</div>
+        <div class="accordion-content"> @Html.DisplayFor(modelItem => item.HouseNumber) @Html.DisplayFor(modelItem => item.Street) <br /> @Html.DisplayFor(modelItem => item.Manager)</div>
     }
-
 </div>
 
 <script>
 // Clicking on the accordion header title...
     $(".accordion").on("click", ".accordion-header", function () {
 
-    // will (slide) toggle the related panel.
- 	$(this).toggleClass("active").next().slideToggle();
- });
+        $(".accordion-header").removeClass("active");
+        $(this).toggleClass("active").next().slideToggle();
+
+        $('.accordion-content').not($(this).next()).slideUp();
+    });
 </script>

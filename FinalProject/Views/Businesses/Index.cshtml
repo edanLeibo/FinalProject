@@ -19,6 +19,7 @@
     <p >
         Name of business: @Html.TextBox("BusinessName")
         Street address: @Html.TextBox("StreetAddress")
+        <br />
         Category: @Html.TextBox("Category")
         City: <select name="City">
             <option value=""></option>
@@ -27,10 +28,10 @@
                 <option value="@c"> @c</option>
             }
         </select>
+        <br />
 
-
-        <input type="submit" value="Filter" />
-        <input type="button" value="Show all" onclick="location.href='@Url.Action("Index")'" />
+        <input type="submit" value="Filter" class="btn btn-danger" />
+        <input type="button" value="Show all" onclick="location.href='@Url.Action("Index")'" class="btn btn-danger"/>
     </p>
 }
 
