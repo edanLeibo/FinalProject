@@ -23,13 +23,15 @@ header, footer, section, aside, nav, article {
     text-shadow: 3px 3px #DDDDDD;
 }
 
-
+html{
+    position:relative;
+}
 body {
     min-width:750px;
     margin: 0 auto;
     padding: 22px 0;
     width: 100%;
-    height: 100% font: 13px/22px Helvetica, Arial, sans-serif;
+    font: 13px/22px Helvetica, Arial, sans-serif;
     background: #bcbec3 !important;
     text-align: center;
     margin-left: auto;
@@ -71,7 +73,7 @@ button {
 img {
     vertical-align: baseline !important;
     max-width:100%;
-max-height:100%;
+    max-height:100%;
 }
 
 #customers {
@@ -104,12 +106,6 @@ max-height:100%;
     }
 
 
-.container {
-    color: #000;
-    margin: 20px auto;
-    position: relative;
-    width: 900px;
-}
 
 #slideshow {
     border: 1px #000 solid;
@@ -139,6 +135,7 @@ nav {
     left: 0;
     width: 100%;
     background: linear-gradient(#6b8298, #353434);
+    min-height:70px;
 }
 
     nav ul {
@@ -409,6 +406,7 @@ form {
 
 */
 
+
 /*------------------------------
 =FOOTER
 ------------------------------*/
@@ -462,6 +460,9 @@ footer {
         }
 
 
+#push{
+    margin-bottom:200px;
+}
 /* rss style */
 #transDemo2 div {
     height: 30px;
@@ -479,56 +480,3 @@ footer {
         -ms-transform: rotate(720deg) scale(2,2);
         transform: rotate(720deg) scale(2,2);
     }
-
-
-.col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-lg, .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xl, .col-xl-1, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9 {
-    float: left;
-}
-.m_b_20{margin-bottom:20px;}
-.btn.btn-danger {
-    background: #96332a;
-    border: 1px solid #96332a;
-}
- 
-.danger_table {
-    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-}
-
-    .danger_table td, .danger_table th {
-        border: 1px solid #ddd;
-        padding: 8px;
-        text-align: center;
-    }
-
-    .danger_table tr:nth-child(even) {
-        background-color: #f2f2f2;
-    }
-
-    .danger_table tr:hover {
-        background-color: #ddd;
-    }
-
-    .danger_table th {
-        padding-top: 12px;
-        padding-bottom: 12px;
-        text-align: left;
-        background-color: #96332a;
-        color: white;
-        text-align: center;
-    }
-
-.p_r_l_15
-{
-    padding-right:15px;
-    padding-left:15px;
-}
-.m_t_20
-{margin-top:20px;}
-
-.p10
-{
-    padding:10px;
-}
- 

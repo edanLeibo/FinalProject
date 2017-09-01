@@ -98,10 +98,16 @@
                 z-index: 5;
             }
 </style >
+@if (Model.Count() == 0)
+{
+    <strong>No businesses were found</strong>
+}
+else
+{
     <ul class="u" style="margin-bottom:285px">
         @foreach (var item in Model)
         {
-            <li onclick="location.href='@Url.Action("Details","Businesses",new { id = item.BusinessID })'">
+            <li onclick="location.href='@Url.Action("Details", "Businesses", new { id = item.BusinessID })'">
                  <a href="#">
                     <h2 id="b-name">@Html.DisplayFor(modelItem => item.BusinessName)</h2>
                     <p class="note">
@@ -118,5 +124,6 @@
                     </p>
                  </a>
             </li>
-        }
+          }
     </ul>
+}
