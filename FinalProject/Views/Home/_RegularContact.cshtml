@@ -1,16 +1,33 @@
 ﻿@model IEnumerable<FinalProject.Models.Office>
-
-<div style="float:left; margin-bottom:185px">
+@*
+<div style="float:left; margin-bottom:185px; margin-right:30px">
     <ul style="background-color:#bcbec3; list-style:circle inside;">
         @foreach (var item in Model)
         {
-            <li style="font-weight:bold">@Html.DisplayFor(modelItem => item.Street) @Html.DisplayFor(modelItem => item.HouseNumber) @Html.DisplayFor(modelItem => item.City) @Html.DisplayFor(modelItem => item.Manager)</li>
-            <p>Manager: @Html.DisplayFor(modelItem => item.Manager)</p>
+            <li style="font-weight:bold"> @Html.DisplayFor(modelItem => item.City) @Html.DisplayFor(modelItem => item.Street) @Html.DisplayFor(modelItem => item.HouseNumber)  </li>
+            <p> Manager: @Html.DisplayFor(modelItem => item.Manager)</p>
         }
     </ul>
 </div>
-
- 
-
+*@
 
 
+<link rel="stylesheet" type="text/css" href="~/Content/regularContactStylesheet.css">
+
+<div class="accordion" style="float:left; margin-bottom:185px; margin-right:30px">
+    @foreach (var item in Model)
+    {
+        <div class="accordion-header"> @Html.DisplayFor(modelItem => item.City)</div>
+        <div class="accordion-content"> House number: @Html.DisplayFor(modelItem => item.HouseNumber) <br />Street: @Html.DisplayFor(modelItem => item.Street)</div>
+    }
+
+</div>
+
+<script>
+// Clicking on the accordion header title...
+    $(".accordion").on("click", ".accordion-header", function () {
+
+    // will (slide) toggle the related panel.
+ 	$(this).toggleClass("active").next().slideToggle();
+ });
+</script>

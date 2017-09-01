@@ -18,6 +18,10 @@ namespace FinalProject.Controllers
         // GET: Reviews
         public ActionResult Index(string businessName, string author, string description)
         {
+            if (!User.Identity.Name.Equals("admin@gmail.com"))
+            {
+                return RedirectToAction("Index","Businesses");
+            }
             var dBReview = db.DBReview.Include(r => r.Business);
             if (!String.IsNullOrEmpty(businessName))
             {

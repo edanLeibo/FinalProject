@@ -17,16 +17,18 @@
         <input type="button" value="Show all" onclick="location.href='@Url.Action("Index")'" />
     </p>
 }
-
-@if (User.Identity.Name.Equals("admin@gmail.com"))
-{
-    @Html.Partial("_AdminContact", Model);
-}
-else
-{
-    @Html.Partial("_RegularContact", Model);
-}
-
+<div id="pageContent" style="min-width=600px">
+    @if (User.Identity.Name.Equals("admin@gmail.com"))
+    {
+        @Html.Partial("_AdminContact", Model);
+        <div id="map_canvas" style="width: 800px; height: 500px; border:solid black 3px"></div>
+    }
+    else
+    {
+        @Html.Partial("_RegularContact", Model);
+        <div id="map_canvas" style="width: 800px; height: 500px; border:solid black 3px"></div>
+    }
+</div>
 
     <style>
         /* Always set the map height explicitly to define the size of the div
@@ -72,7 +74,6 @@ else
             };
     </script>
 
-    <div id="map_canvas" style="width: 800px; height: 500px; border:solid black 3px" ></div>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBz6T_-pt82oRbHIpMHvVQakDH6PzZ31C8&callback=initMap"
             async defer>
     </script>
