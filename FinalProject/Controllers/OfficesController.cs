@@ -18,12 +18,12 @@ namespace FinalProject.Controllers
         private GeneralDbContext db = new GeneralDbContext();
 
         // GET: Offices
-        public ActionResult Index(int? officeID, string city, string manager)
+        public ActionResult Index(string Street, string city, string manager)
         {
             var Offices = from o in db.DBOffice select o;
-            if (!(officeID == null))
+            if (!String.IsNullOrEmpty(Street))
             {
-                Offices = Offices.Where(s => s.OfficeID.Equals(officeID));
+                Offices = Offices.Where(s => s.Street.ToLower().Contains(Street.ToLower()));
             }
             if (!String.IsNullOrEmpty(city))
             {

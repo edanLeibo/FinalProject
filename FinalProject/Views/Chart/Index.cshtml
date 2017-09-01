@@ -9,10 +9,15 @@
     <input class="btn" type="button" value="Businesses" onclick="location.href='@Url.Action("Index","Businesses")'" />
     <input class="btn" type="button" value="Businesses Categories" onclick="location.href='@Url.Action("Index","Categories")'" />
     <br />
-
-    @Html.Partial("_ReviewsPerMonth", Model);
-    @Html.Partial("_BusinessesPerCategory", Model);
-    @Html.Partial("_topFive", Model);
+    <div class="row">
+        <div class="col-md-1 offset-md-2">@Html.Partial("_ReviewsPerMonth", Model)</div>
+    </div>
+    <div class="row">
+        <div class="col-md-2 offset-md-2">@Html.Partial("_BusinessesPerCategory", Model)</div>
+    </div>
+    <div class="row">
+        <div class="col-md-2 offset-md-2">@Html.Partial("_topFive", Model)</div>
+    </div>
 </div>
 
 

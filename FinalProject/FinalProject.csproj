@@ -343,7 +343,7 @@
     <Content Include="Views\Home\_AdminContact.cshtml" />
     <Content Include="Views\Home\_RegularContact.cshtml" />
     <Content Include="Views\Chart\_ReviewsPerMonth.cshtml" />
-    <Content Include="Views\Chart\_BusinessesPerCategory.cshtml" />
+    <None Include="Views\Chart\_BusinessesPerCategory.cshtml" />
     <Content Include="Views\Chart\_topFive.cshtml" />
     <Content Include="Views\View.cshtml" />
     <Content Include="Views\edit.cshtml" />
