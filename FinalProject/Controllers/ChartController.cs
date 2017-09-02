@@ -13,6 +13,8 @@ namespace FinalProject.Controllers
     public class ChartController : Controller
     {
         private GeneralDbContext db = new GeneralDbContext();
+
+        [Authorize]
         // GET: Chart
         public ActionResult Index()
         {
@@ -25,6 +27,7 @@ namespace FinalProject.Controllers
             return View(objProductModel);
         }
 
+        [Authorize]
         public ReviewCount GetChartData()
         {
             try
@@ -50,6 +53,7 @@ namespace FinalProject.Controllers
             }
         }
 
+        [Authorize]
         //Data for graph it shows how much Business in each category
         public JsonResult categoriesGraph()
         {
@@ -81,6 +85,7 @@ namespace FinalProject.Controllers
             return Json(numOfBusinesses, JsonRequestBehavior.AllowGet);
         }
 
+        [Authorize]
         public JsonResult topFiveGraph()
         {
 
@@ -117,18 +122,21 @@ namespace FinalProject.Controllers
             return Json(numOfReviews, JsonRequestBehavior.AllowGet);
         }
 
+        [Authorize]
         // GET: Chart/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
+        [Authorize]
         // GET: Chart/Create
         public ActionResult Create()
         {
             return View();
         }
 
+        [Authorize]
         // POST: Chart/Create
         [HttpPost]
         public ActionResult Create(FormCollection collection)
@@ -145,12 +153,14 @@ namespace FinalProject.Controllers
             }
         }
 
+        [Authorize]
         // GET: Chart/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
+        [Authorize]
         // POST: Chart/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
@@ -167,12 +177,14 @@ namespace FinalProject.Controllers
             }
         }
 
+        [Authorize]
         // GET: Chart/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
+        [Authorizes]
         // POST: Chart/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)

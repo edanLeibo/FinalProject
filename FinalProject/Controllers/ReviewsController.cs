@@ -15,6 +15,7 @@ namespace FinalProject.Controllers
     {
         private GeneralDbContext db = new GeneralDbContext();
 
+        [Authorize]
         // GET: Reviews
         public ActionResult Index(string businessName, string author, string description)
         {
@@ -39,6 +40,7 @@ namespace FinalProject.Controllers
             return View(dBReview.ToList());
         }
 
+        [Authorize]
         // GET: Reviews/Details/5
         public ActionResult Details(int? id)
         {
@@ -63,6 +65,7 @@ namespace FinalProject.Controllers
         }
         **/
 
+        [Authorize]
         // GET: Reviews/Create
         public ActionResult Create(int? id)
         {
@@ -78,6 +81,7 @@ namespace FinalProject.Controllers
             return View();
         }
 
+        [Authorize]
         // POST: Reviews/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -96,6 +100,7 @@ namespace FinalProject.Controllers
             return View(review);
         }
 
+        [Authorize]
         // GET: Reviews/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -113,6 +118,7 @@ namespace FinalProject.Controllers
             //return Json(id);
         }
 
+        [Authorize]
         // POST: Reviews/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -130,6 +136,7 @@ namespace FinalProject.Controllers
             return View(review);
         }
 
+        [Authorize]
         // GET: Reviews/Delete/5
         public ActionResult Delete(int? id)
         {
@@ -145,6 +152,7 @@ namespace FinalProject.Controllers
             return View(review);
         }
 
+        [Authorize]
         // POST: Reviews/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]

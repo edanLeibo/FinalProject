@@ -21,6 +21,7 @@ namespace EX5.Controllers
             return View(db.DBBusiness.ToList());
         }
 
+        [Authorize]
         // GET: Businesses
         public ActionResult Index(string BusinessName, string Category, string StreetAddress, string City)
         {
@@ -60,6 +61,7 @@ namespace EX5.Controllers
             return View(Bussinesses);
         }
 
+        [Authorize]
         // GET: Businesses/Details/5
         public ActionResult Details(int? id)
         {
@@ -75,6 +77,7 @@ namespace EX5.Controllers
             return View(business);
         }
 
+        [Authorize]
         // GET: Businesses/Create
         public ActionResult Create()
         {
@@ -82,7 +85,7 @@ namespace EX5.Controllers
             return View();
         }
 
-
+        [Authorize]
         // POST: Businesses/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
@@ -100,6 +103,7 @@ namespace EX5.Controllers
             return View(business);
         }
 
+        [Authorize]
         // GET: Businesses/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -116,6 +120,7 @@ namespace EX5.Controllers
             return View(business);
         }
 
+        [Authorize]
         // POST: Businesses/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
@@ -132,6 +137,7 @@ namespace EX5.Controllers
             return View(business);
         }
 
+        [Authorize]
         // GET: Businesses/Delete/5
         public ActionResult Delete(int? id)
         {
@@ -150,6 +156,7 @@ namespace EX5.Controllers
             return View(business);
         }
 
+        [Authorize]
         // POST: Businesses/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
@@ -161,6 +168,7 @@ namespace EX5.Controllers
             return RedirectToAction("Index");
         }
 
+        [Authorize]
         [HttpPost]
         public ActionResult GiveRank(int id, int rank)
         {

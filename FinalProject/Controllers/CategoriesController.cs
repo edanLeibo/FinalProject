@@ -15,12 +15,14 @@ namespace FinalProject.Controllers
     {
         private GeneralDbContext db = new GeneralDbContext();
 
+        [Authorize]
         // GET: Categories
         public ActionResult Index()
         {
             return View(db.DBCategories.ToList());
         }
 
+        [Authorize]
         // GET: Categories/Details/5
         public ActionResult Details(int? id)
         {
@@ -36,12 +38,14 @@ namespace FinalProject.Controllers
             return View(category);
         }
 
+        [Authorize]
         // GET: Categories/Create
         public ActionResult Create()
         {
             return View();
         }
 
+        [Authorize]
         // POST: Categories/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -59,6 +63,7 @@ namespace FinalProject.Controllers
             return View(category);
         }
 
+        [Authorize]
         // GET: Categories/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -74,6 +79,7 @@ namespace FinalProject.Controllers
             return View(category);
         }
 
+        [Authorize]
         // POST: Categories/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -90,6 +96,7 @@ namespace FinalProject.Controllers
             return View(category);
         }
 
+        [Authorize]
         // GET: Categories/Delete/5
         public ActionResult Delete(int? id)
         {
@@ -105,6 +112,7 @@ namespace FinalProject.Controllers
             return View(category);
         }
 
+        [Authorize]
         // POST: Categories/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]

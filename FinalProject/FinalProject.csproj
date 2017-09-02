@@ -237,12 +237,11 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\BusiDetails.css" />
-    <Content Include="Content\guy1.jpg" />
-    <Content Include="Content\guy2.jpg" />
-    <Content Include="Content\guy3.jpg" />
+    <Content Include="images\guy1.jpg" />
+    <Content Include="images\guy2.jpg" />
+    <Content Include="images\guy3.jpg" />
     <Content Include="Content\local-small-business-ss-1920.jpg" />
     <Content Include="Content\main.css" />
-    <Content Include="Content\Arik.mp4" />
     <Content Include="Content\myStylesheet.css" />
     <Content Include="Content\opening.mp4" />
     <Content Include="Content\RecommenationsStyleSheet.css" />

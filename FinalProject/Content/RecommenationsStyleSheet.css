@@ -38,7 +38,7 @@ body{
 .column {
     width:31%;
     float:left;
-	background-color: yellow;
+	background-color: #FFD700;
 	border-style: solid;
 	padding: 10px;
 	border-radius: 10px;
@@ -55,7 +55,7 @@ body{
 
 .text {
     height: 150px;
-	color: yellow;
+	color: #FFD700;
 	font-size:12px;	
 	font-family:'MyWebFont',Verdana, sans-serif;
 	text-align: center;
