@@ -109,7 +109,7 @@ else
         {
             <li onclick="location.href='@Url.Action("Details", "Businesses", new { id = item.BusinessID })'">
                  <a href="#">
-                    <h2 id="b-name">@Html.DisplayFor(modelItem => item.BusinessName)</h2>
+                    <h3 id="b-name">@Html.DisplayFor(modelItem => item.BusinessName)- @Html.DisplayFor(modelItem => item.Category.CategoryName)</h3>
                     <p class="note">
                         @Html.DisplayFor(modelItem => item.StreetAddress)<br/>
                         @Html.DisplayFor(modelItem => item.City)<br />
