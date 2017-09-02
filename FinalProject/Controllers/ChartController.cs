@@ -184,7 +184,7 @@ namespace FinalProject.Controllers
             return View();
         }
 
-        [Authorizes]
+        [Authorize]
         // POST: Chart/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)

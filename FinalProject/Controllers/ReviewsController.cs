@@ -67,7 +67,7 @@ namespace FinalProject.Controllers
 
         [Authorize]
         // GET: Reviews/Create
-        public ActionResult Create(int? id)
+        public ActionResult Create(int id)
         {
             //if (id == null)
             //{
@@ -77,7 +77,8 @@ namespace FinalProject.Controllers
             //{
             //    return HttpNotFound();
             //}
-            ViewBag.BusinessID = new SelectList(db.DBBusiness.ToList(), "BusinessID", "BusinessName");
+            //ViewBag.BusinessID = new SelectList(db.DBBusiness.ToList(), "BusinessID", "BusinessName");
+            ViewBag.BusinessID = id;
             return View();
         }
 

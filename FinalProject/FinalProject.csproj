@@ -350,7 +350,6 @@
     <Content Include="Views\Chart\_ReviewsPerMonth.cshtml" />
     <None Include="Views\Chart\_BusinessesPerCategory.cshtml" />
     <Content Include="Views\Chart\_topFive.cshtml" />
-    <Content Include="Views\View.cshtml" />
     <Content Include="Views\edit.cshtml" />
     <Content Include="Views\Recommendations\index.cshtml" />
   </ItemGroup>
