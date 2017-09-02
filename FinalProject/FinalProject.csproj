@@ -204,6 +204,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\OfficesController.cs" />
+    <Compile Include="Controllers\RecommendationsController.cs" />
     <Compile Include="Controllers\ReviewsController.cs" />
     <Compile Include="Controllers\StatisticsController.cs" />
     <Compile Include="Dal\GeneralDbContext.cs" />
@@ -236,11 +237,15 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\BusiDetails.css" />
+    <Content Include="Content\guy1.jpg" />
+    <Content Include="Content\guy2.jpg" />
+    <Content Include="Content\guy3.jpg" />
     <Content Include="Content\local-small-business-ss-1920.jpg" />
     <Content Include="Content\main.css" />
     <Content Include="Content\Arik.mp4" />
     <Content Include="Content\myStylesheet.css" />
     <Content Include="Content\opening.mp4" />
+    <Content Include="Content\RecommenationsStyleSheet.css" />
     <Content Include="Content\RegularBusinessStyle.css" />
     <Content Include="Content\starsStylesheet.css" />
     <Content Include="Content\style.css" />
@@ -348,6 +353,7 @@
     <Content Include="Views\Chart\_topFive.cshtml" />
     <Content Include="Views\View.cshtml" />
     <Content Include="Views\edit.cshtml" />
+    <Content Include="Views\Recommendations\index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
