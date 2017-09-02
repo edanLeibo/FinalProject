@@ -21,7 +21,7 @@ namespace FinalProject.Controllers
         {
             if (!User.Identity.Name.Equals("admin@gmail.com"))
             {
-                return RedirectToAction("Index","Businesses");
+                return RedirectToAction("Index", "Businesses");
             }
             var dBReview = db.DBReview.Include(r => r.Business);
             if (!String.IsNullOrEmpty(businessName))

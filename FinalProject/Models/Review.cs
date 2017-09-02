@@ -12,14 +12,18 @@ namespace EX5.Models
     {
         public int ReviewID { get; set; }
 
+        [Required]
         [Display(Name = "Date")]
         [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime Date { get; set; }
 
+        [Required]
         [Display(Name = "Author")]
         [DataType(DataType.Text)]
         public string Author { get; set; }
 
+        [Required]
         [Display(Name = "Description")]
         [DataType(DataType.Text)]
         public string Description { get; set; }

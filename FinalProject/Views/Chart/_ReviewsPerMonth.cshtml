@@ -10,16 +10,16 @@
 
     function drawChart() {
         // Create and populate the data table.
-        var month =[@Model.ReviewCountData.Month];
-        var count =[ @Model.ReviewCountData.Count];
+        var month = [@Model.ReviewCountData.Month];
+        var count = [ @Model.ReviewCountData.Count];
 
 
         var data = new google.visualization.DataTable();
         data.addColumn('string', '@Model.Title');
         data.addColumn('number', '@Model.CountTitle');
-        var _Month = [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ];
+        var _Month = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
         for (i = 0; i < month.length; i++) {
-                    data.addRow([_Month[month[i] - 1].toString(), count[i]]);
+            data.addRow([_Month[month[i] - 1].toString(), count[i]]);
         }
         var options = {
             title: 'Annual Review Count',

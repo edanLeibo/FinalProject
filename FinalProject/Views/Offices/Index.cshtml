@@ -16,7 +16,7 @@
         Street: @Html.TextBox("Street")
         City: @Html.TextBox("city")
         Manager: @Html.TextBox("manager")
-        <input type="submit" value="Search" class="btn btn-danger"/>
+        <input type="submit" value="Search" class="btn btn-danger" />
         <input type="button" value="Show all" onclick="location.href='@Url.Action("Index")'" class="btn btn-danger" />
     </p>
 }
@@ -91,102 +91,102 @@
 {
     <strong>No offices were Found</strong>
 }
-    <style>
-        /* Always set the map height explicitly to define the size of the div
+<style>
+    /* Always set the map height explicitly to define the size of the div
         * element that contains the map. */
-        #map {
-            height: 100%;
-        }
-        /* Optional: Makes the sample page fill the window. */
-        html, body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
-    </style>
+    #map {
+        height: 100%;
+    }
+    /* Optional: Makes the sample page fill the window. */
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+</style>
 
-    <script>
+<script>
 
-        function AddMarker(map, Latitude, Longitude) {
-            var latlng = new google.maps.LatLng(Latitude, Longitude);
+    function AddMarker(map, Latitude, Longitude) {
+        var latlng = new google.maps.LatLng(Latitude, Longitude);
 
-            var markeroption = new google.maps.Marker({
-                position: latlng,
-                draggable: false,
-                map: map,
-                title: "Center"
-            });
-        }
+        var markeroption = new google.maps.Marker({
+            position: latlng,
+            draggable: false,
+            map: map,
+            title: "Center"
+        });
+    }
 
-        function initMap() {
-            var latlng = new google.maps.LatLng(32.812452, 34.996451);
+    function initMap() {
+        var latlng = new google.maps.LatLng(32.812452, 34.996451);
 
-            var options = {
-                zoom: 10, center: latlng,
-                mapTypeId: google.maps.MapTypeId.TERRAIN
-            };
-
-            var map = new google.maps.Map(document.getElementById
-                ("map_canvas"), options);
-
-            @foreach (var l in Model)
-        {  
-             @(string.Format("AddMarker(map, {0},{1});", l.Latitude, l.Longitude));
-        }
-            return map;
+        var options = {
+            zoom: 10, center: latlng,
+            mapTypeId: google.maps.MapTypeId.TERRAIN
         };
 
+        var map = new google.maps.Map(document.getElementById
+            ("map_canvas"), options);
 
-    </script>
-    <div id="map_canvas" style="width: 500px; height: 300px; margin: auto !important" />
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBz6T_-pt82oRbHIpMHvVQakDH6PzZ31C8&callback=initMap"
-            async defer></script>
-
-
-    <!--
-
-
-    <div id="map"></div>
-    <script>
-        var map;
-        var haifa = { name: "Haifa", lat: 32.812452, lng: 34.996451 };
-        var telAviv = { name: "Tel-Aviv", lat: 32.086956, lng: 34.782392 };
-        var beerSeva = { name: "Beer-Sheva", lat: 31.251601, lng: 34.798025 };
-        var jerusalem = { name: "Jerusalem", lat: 31.783242, lng: 35.217728 };
-        var tiberias = { name: "Tiberias", lat: 32.794648, lng: 35.532391 };
-        var eilat = { name: "Eilat", lat: 29.560059, lng: 34.941117 };
-        var ashkelon = { name: "Ashkelon", lat: 31.673538, lng: 34.580925 };
-        var afula = { name: "Afula", lat: 32.610551, lng: 35.293307 };
-        var kiryatShmona = { name: "Kiryat Shmona", lat: 33.207793, lng: 35.568489 };
-        var markers = [];
-        markers.push(haifa, telAviv, jerusalem, beerSeva, tiberias, eilat, ashkelon, afula, kiryatShmona);
+        @foreach (var l in Model)
+        {
+             @(string.Format("AddMarker(map, {0},{1});", l.Latitude, l.Longitude));
+        }
+        return map;
+    };
 
 
-        function initMap() {
-            map = new google.maps.Map(document.getElementById('map'), {
-                center: { lat: 32.610551, lng: 35.293307 },
-                zoom: 8
+</script>
+<div id="map_canvas" style="width: 500px; height: 300px; margin: auto !important" />
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBz6T_-pt82oRbHIpMHvVQakDH6PzZ31C8&callback=initMap"
+        async defer></script>
+
+
+<!--
+
+
+<div id="map"></div>
+<script>
+    var map;
+    var haifa = { name: "Haifa", lat: 32.812452, lng: 34.996451 };
+    var telAviv = { name: "Tel-Aviv", lat: 32.086956, lng: 34.782392 };
+    var beerSeva = { name: "Beer-Sheva", lat: 31.251601, lng: 34.798025 };
+    var jerusalem = { name: "Jerusalem", lat: 31.783242, lng: 35.217728 };
+    var tiberias = { name: "Tiberias", lat: 32.794648, lng: 35.532391 };
+    var eilat = { name: "Eilat", lat: 29.560059, lng: 34.941117 };
+    var ashkelon = { name: "Ashkelon", lat: 31.673538, lng: 34.580925 };
+    var afula = { name: "Afula", lat: 32.610551, lng: 35.293307 };
+    var kiryatShmona = { name: "Kiryat Shmona", lat: 33.207793, lng: 35.568489 };
+    var markers = [];
+    markers.push(haifa, telAviv, jerusalem, beerSeva, tiberias, eilat, ashkelon, afula, kiryatShmona);
+
+
+    function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+            center: { lat: 32.610551, lng: 35.293307 },
+            zoom: 8
+        });
+
+        for (i = 0; i < markers.length ; i++) {
+            var name = markers[i].name
+            var lat = markers[i].lat
+            var lng = markers[i].lng
+
+           var mrk = markers[i];
+            var marker = new google.maps.Marker({
+                position: { lat:mrk.lat, lng: mrk.lng},
+                map: map,
+                title: mrk.name
             });
-
-            for (i = 0; i < markers.length ; i++) {
-                var name = markers[i].name
-                var lat = markers[i].lat
-                var lng = markers[i].lng
-
-               var mrk = markers[i];
-                var marker = new google.maps.Marker({
-                    position: { lat:mrk.lat, lng: mrk.lng},
-                    map: map,
-                    title: mrk.name
-                });
-
-            }
 
         }
 
+    }
 
 
-    </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBz6T_-pt82oRbHIpMHvVQakDH6PzZ31C8&callback=initMap"
-            async defer></script>
-         -->
+
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBz6T_-pt82oRbHIpMHvVQakDH6PzZ31C8&callback=initMap"
+        async defer></script>
+     -->

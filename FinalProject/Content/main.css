@@ -23,11 +23,12 @@ header, footer, section, aside, nav, article {
     text-shadow: 3px 3px #DDDDDD;
 }
 
-html{
-    position:relative;
+html {
+    position: relative;
 }
+
 body {
-    min-width:750px;
+    min-width: 750px;
     margin: 0 auto;
     padding: 22px 0;
     width: 100%;
@@ -72,8 +73,8 @@ button {
 
 img {
     vertical-align: baseline !important;
-    max-width:100%;
-    max-height:100%;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 #customers {
@@ -135,7 +136,7 @@ nav {
     left: 0;
     width: 100%;
     background: linear-gradient(#6b8298, #353434);
-    min-height:70px;
+    min-height: 70px;
 }
 
     nav ul {
@@ -172,9 +173,10 @@ nav {
                 padding-left: 33px;
                 text-align: left;
             }
-            .navbar-nav {
-                display:inline;
-            }
+
+.navbar-nav {
+    display: inline;
+}
 
 
 /*------------------------------
@@ -204,7 +206,7 @@ nav {
     #intro h2 {
         padding: 0 0 5px 0;
         font-weight: 700;
-        color: #000
+        color: #000;
     }
 
     #intro p {
@@ -299,8 +301,8 @@ footer {
         }
 
 
-#push{
-    margin-bottom:200px;
+#push {
+    margin-bottom: 200px;
 }
 
 /* rss style */

@@ -8,7 +8,8 @@
     HashSet<string> allCities = new HashSet<string>();
     foreach (var b in Model)
     {
-        if (b.City != null) {
+        if (b.City != null)
+        {
             allCities.Add(b.City.ToLower());
         }
     }
@@ -16,7 +17,7 @@
 }
 @using (Html.BeginForm())
 {
-    <p >
+    <p>
         Name of business: @Html.TextBox("BusinessName")
         Street address: @Html.TextBox("StreetAddress")
         <br />
@@ -31,7 +32,7 @@
         <br />
 
         <input type="submit" value="Filter" class="btn btn-danger" />
-        <input type="button" value="Show all" onclick="location.href='@Url.Action("Index")'" class="btn btn-danger"/>
+        <input type="button" value="Show all" onclick="location.href='@Url.Action("Index")'" class="btn btn-danger" />
     </p>
 }
 

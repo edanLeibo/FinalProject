@@ -12,6 +12,7 @@ namespace FinalProject.Models
         [Display(Name = "Category ID")]
         public int CategoryID { get; set; }
 
+        [Required]
         [Display(Name = "Category Name")]
         [DataType(DataType.Text)]
         public string CategoryName { get; set; }

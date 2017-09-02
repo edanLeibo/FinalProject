@@ -1,67 +1,66 @@
 ﻿@font-face {
-  font-family: 'MyWebFont';
-  src: url('webfont.eot'); /* IE9 Compat Modes */
-  src: url('webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('webfont.woff2') format('woff2'), /* Super Modern Browsers */
-       url('webfont.woff') format('woff'), /* Pretty Modern Browsers */
-       url('webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
-       url('webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
+    font-family: 'MyWebFont';
+    src: url('webfont.eot'); /* IE9 Compat Modes */
+    src: url('webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('webfont.woff2') format('woff2'), /* Super Modern Browsers */
+    url('webfont.woff') format('woff'), /* Pretty Modern Browsers */
+    url('webfont.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
 }
 
 .newspaper {
     -webkit-column-count: 3; /* Chrome, Safari, Opera */
     -moz-column-count: 3; /* Firefox */
     column-count: 3;
-	column-gap: 40px;
-	column-rule: 4px outset lightblue;
-	border-style: solid;
-	border-radius: 30px;
-	padding: 15px;
-	background-color: #DEB887;
-	transition: color 2s;	
+    column-gap: 40px;
+    column-rule: 4px outset lightblue;
+    border-style: solid;
+    border-radius: 30px;
+    padding: 15px;
+    background-color: #DEB887;
+    transition: color 2s;
 }
 
-.newspaper:hover{
-	background-color: #FFD700;
-}
+    .newspaper:hover {
+        background-color: #FFD700;
+    }
 
-body{
-	min-width:600px;
-	min-height:1000px;
+body {
+    min-width: 600px;
+    min-height: 1000px;
 }
 
 .container#recContainer {
-    min-width:950px;
-    width:100%;
+    min-width: 950px;
+    width: 100%;
 }
 
 .column {
-    width:31%;
-    float:left;
-	background-color: #FFD700;
-	border-style: solid;
-	padding: 10px;
-	border-radius: 10px;
-	text-align: center;
+    width: 31%;
+    float: left;
+    background-color: #FFD700;
+    border-style: solid;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
 }
 
-.column img {
-    width:100%;
-    height:auto;
-	position: relative;
-	bottom: 0px;
-	
-}
+    .column img {
+        width: 100%;
+        height: auto;
+        position: relative;
+        bottom: 0px;
+    }
 
 .text {
     height: 150px;
-	color: #FFD700;
-	font-size:12px;	
-	font-family:'MyWebFont',Verdana, sans-serif;
-	text-align: center;
-	transition: color .5sec ease-in;
+    color: #FFD700;
+    font-size: 12px;
+    font-family: 'MyWebFont',Verdana, sans-serif;
+    text-align: center;
+    transition: color .5sec ease-in;
 }
 
-.text:hover {
-	color: black;
-}
+    .text:hover {
+        color: black;
+    }

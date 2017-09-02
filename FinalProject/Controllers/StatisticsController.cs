@@ -16,12 +16,12 @@ namespace FinalProject.Controllers
         public ActionResult ShowStatistics()
         {
             IQueryable<ReviewDateGroup> data = from review in db.DBReview
-                                                   group review by review.Date into dateGroup
-                                                   select new ReviewDateGroup()
-                                                   {
-                                                       ReviewDate = dateGroup.Key,
-                                                       ReviewCount = dateGroup.Count()
-                                                   };
+                                               group review by review.Date into dateGroup
+                                               select new ReviewDateGroup()
+                                               {
+                                                   ReviewDate = dateGroup.Key,
+                                                   ReviewCount = dateGroup.Count()
+                                               };
             return View(data.ToList());
         }
         protected override void Dispose(bool disposing)

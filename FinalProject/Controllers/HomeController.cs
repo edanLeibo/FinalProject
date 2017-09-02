@@ -10,7 +10,7 @@ namespace EX5.Controllers
     public class HomeController : Controller
     {
         private GeneralDbContext db = new GeneralDbContext();
-    
+
         public ActionResult Index()
         {
             return View();

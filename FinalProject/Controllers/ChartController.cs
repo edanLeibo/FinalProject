@@ -108,7 +108,7 @@ namespace FinalProject.Controllers
 
             var myQuery2 = (from y in @myGroup
                          where y.Num >= 1
-                         orderby y.Num
+                         orderby y.Num descending
                          select y).Take(5);
 
             foreach (var item in myQuery2)

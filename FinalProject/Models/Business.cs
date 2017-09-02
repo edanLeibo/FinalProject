@@ -11,13 +11,14 @@ namespace EX5.Models
 {
     public class Business 
     {
-        //[DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity), Key()]
         public int BusinessID { get; set; }
 
+        [Required]
         [Display(Name = "Business Name")]
         [DataType(DataType.Text)]
         public string BusinessName { get; set; }
 
+        [Required]
         [Display(Name = "Owner")]
         [DataType(DataType.Text)]
         public string Owner { get; set; }
@@ -38,6 +39,7 @@ namespace EX5.Models
         [DataType(DataType.Url)]
         public string Website { get; set; }
 
+        [Required]
         [Display(Name = "Description")]
         [DataType(DataType.Text)]
         public string Description { get; set; }

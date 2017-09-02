@@ -14,7 +14,7 @@
         City: @Html.TextBox("city")
         Manager: @Html.TextBox("manager")
         <input type="submit" value="Filter" class="btn btn-danger" />
-        <input type="button" value="Show all" onclick="location.href='@Url.Action("Contact")'" class="btn btn-danger"/>
+        <input type="button" value="Show all" onclick="location.href='@Url.Action("Contact")'" class="btn btn-danger" />
     </p>
 }
 <div id="pageContent" style="min-width: 1000px;">
@@ -30,51 +30,51 @@
     }
 </div>
 
-    <style>
-        /* Always set the map height explicitly to define the size of the div
+<style>
+    /* Always set the map height explicitly to define the size of the div
             * element that contains the map. */
-        #map {
-            height: 100%;
-        }
-        /* Optional: Makes the sample page fill the window. */
-        html, body {
-            margin: 0;
-            padding: 0;
-        }
-    </style>
+    #map {
+        height: 100%;
+    }
+    /* Optional: Makes the sample page fill the window. */
+    html, body {
+        margin: 0;
+        padding: 0;
+    }
+</style>
 
-    <script>
-            function AddMarker(map, Latitude, Longitude) {
-                var latlng = new google.maps.LatLng(Latitude, Longitude);
+<script>
+    function AddMarker(map, Latitude, Longitude) {
+        var latlng = new google.maps.LatLng(Latitude, Longitude);
 
-                var markeroption = new google.maps.Marker({
-                    position: latlng,
-                    draggable: false,
-                    map: map,
-                    title: "Center"
-                });
-            }
+        var markeroption = new google.maps.Marker({
+            position: latlng,
+            draggable: false,
+            map: map,
+            title: "Center"
+        });
+    }
 
-            function initMap() {
-                var latlng = new google.maps.LatLng(31.774120, 35.217933);
+    function initMap() {
+        var latlng = new google.maps.LatLng(31.774120, 35.217933);
 
-                var options = {
-                    zoom: 7, center: latlng,
-                    mapTypeId: google.maps.MapTypeId.TERRAIN
-                };
+        var options = {
+            zoom: 7, center: latlng,
+            mapTypeId: google.maps.MapTypeId.TERRAIN
+        };
 
-                var map = new google.maps.Map(document.getElementById
-                    ("map_canvas"), options);
+        var map = new google.maps.Map(document.getElementById
+            ("map_canvas"), options);
 
-                @foreach (var l in Model)
+        @foreach (var l in Model)
                 {
                      @(string.Format("AddMarker(map, {0},{1});", l.Latitude, l.Longitude));
                 }
-                return map;
-            };
-    </script>
+        return map;
+    };
+</script>
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBz6T_-pt82oRbHIpMHvVQakDH6PzZ31C8&callback=initMap"
-            async defer>
-    </script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBz6T_-pt82oRbHIpMHvVQakDH6PzZ31C8&callback=initMap"
+        async defer>
+</script>
 

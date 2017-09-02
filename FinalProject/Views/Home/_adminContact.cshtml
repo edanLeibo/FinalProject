@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<FinalProject.Models.Office>
 
-<table class="table"style="margin-bottom:285px">
+<table class="table" style="margin-bottom:285px">
 
     <tr>
         <th>
@@ -55,7 +55,7 @@
             </td>
 
             <td>
-                @Html.ActionLink("Edit", "Edit","Offices",new { id = item.OfficeID },null) |
+                @Html.ActionLink("Edit", "Edit", "Offices", new { id = item.OfficeID }, null) |
                 @Html.ActionLink("Details", "Details", "Offices", new { id = item.OfficeID }, null) |
                 @Html.ActionLink("Delete", "Delete", "Offices", new { id = item.OfficeID }, null)
             </td>

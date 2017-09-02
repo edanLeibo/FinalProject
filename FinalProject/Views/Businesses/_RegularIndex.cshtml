@@ -4,7 +4,6 @@
 
 <link href="http://fonts.googleapis.com/css?family=Reenie+Beanie:regular" rel="stylesheet" type="text/css">
 <style type="text/css">
-
     h2#b-name, p.note {
         font-size: 100%;
         font-weight: normal;
@@ -97,7 +96,7 @@
                 position: relative;
                 z-index: 5;
             }
-</style >
+</style>
 @if (Model.Count() == 0)
 {
     <strong>No businesses were found</strong>
@@ -108,10 +107,10 @@ else
         @foreach (var item in Model)
         {
             <li onclick="location.href='@Url.Action("Details", "Businesses", new { id = item.BusinessID })'">
-                 <a href="#">
+                <a href="#">
                     <h3 id="b-name">@Html.DisplayFor(modelItem => item.BusinessName)- @Html.DisplayFor(modelItem => item.Category.CategoryName)</h3>
                     <p class="note">
-                        @Html.DisplayFor(modelItem => item.StreetAddress)<br/>
+                        @Html.DisplayFor(modelItem => item.StreetAddress)<br />
                         @Html.DisplayFor(modelItem => item.City)<br />
                         <link rel="stylesheet" type="text/css" href="~/Content/myStylesheet.css">
                         <div class="star-ratings-css">
@@ -122,8 +121,8 @@ else
                             <div class="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
                         </div>
                     </p>
-                 </a>
+                </a>
             </li>
-          }
+                                }
     </ul>
-}
+                                }

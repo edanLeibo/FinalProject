@@ -19,61 +19,61 @@
 
 <script type="text/javascript">
 
-		var img = new Image();
+    var img = new Image();
 
-		img.onload = function() {
-    		imgW = img.width*scale;
-    		imgH = img.height*scale;
-    		if (imgW > CanvasXSize) { x = CanvasXSize-imgW; } // image larger than canvas
-    		if (imgW > CanvasXSize) { clearX = imgW; } // image larger than canvas
-    		else { clearX = CanvasXSize; }
-    		if (imgH > CanvasYSize) { clearY = imgH; } // image larger than canvas
-    		else { clearY = CanvasYSize; }
-    		//Get Canvas Element
-    		ctx = document.getElementById('canvas').getContext('2d');
-    		//Set Refresh Rate
-    		return setInterval(draw, speed);
-		}
+    img.onload = function () {
+        imgW = img.width * scale;
+        imgH = img.height * scale;
+        if (imgW > CanvasXSize) { x = CanvasXSize - imgW; } // image larger than canvas
+        if (imgW > CanvasXSize) { clearX = imgW; } // image larger than canvas
+        else { clearX = CanvasXSize; }
+        if (imgH > CanvasYSize) { clearY = imgH; } // image larger than canvas
+        else { clearY = CanvasYSize; }
+        //Get Canvas Element
+        ctx = document.getElementById('canvas').getContext('2d');
+        //Set Refresh Rate
+        return setInterval(draw, speed);
+    }
 
-		function draw() {
-    		//Clear Canvas
-    		ctx.clearRect(0,0,clearX,clearY);
-    		//If image is <= Canvas Size
-    		if (imgW <= CanvasXSize) {
-       	 	//reset, start from beginning
-        		if (x > (CanvasXSize)) { x = 0; }
-        		//draw aditional image
-        		if (x > (CanvasXSize-imgW)) { ctx.drawImage(img,x-CanvasXSize+1,y,imgW,imgH); }
-    		}
-    		//If image is > Canvas Size
-    		else {
-        		//reset, start from beginning
-        		if (x > (CanvasXSize)) { x = CanvasXSize-imgW; }
-        		//draw aditional image
-        		if (x > (CanvasXSize-imgW)) { ctx.drawImage(img,x-imgW+1,y,imgW,imgH); }
-    		}
-    		//draw image
-    		ctx.drawImage(img,x,y,imgW,imgH);
-    		//amount to move
-    		x += dx;
-		}
+    function draw() {
+        //Clear Canvas
+        ctx.clearRect(0, 0, clearX, clearY);
+        //If image is <= Canvas Size
+        if (imgW <= CanvasXSize) {
+            //reset, start from beginning
+            if (x > (CanvasXSize)) { x = 0; }
+            //draw aditional image
+            if (x > (CanvasXSize - imgW)) { ctx.drawImage(img, x - CanvasXSize + 1, y, imgW, imgH); }
+        }
+            //If image is > Canvas Size
+        else {
+            //reset, start from beginning
+            if (x > (CanvasXSize)) { x = CanvasXSize - imgW; }
+            //draw aditional image
+            if (x > (CanvasXSize - imgW)) { ctx.drawImage(img, x - imgW + 1, y, imgW, imgH); }
+        }
+        //draw image
+        ctx.drawImage(img, x, y, imgW, imgH);
+        //amount to move
+        x += dx;
+    }
 </script>
 
-    <link href="css/main.css" rel="stylesheet" type="text/css" />
-    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <script src="js/pixastic.custom.js"></script>
-    <script src="js/script.js"></script>
+<link href="css/main.css" rel="stylesheet" type="text/css" />
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="js/pixastic.custom.js"></script>
+<script src="js/script.js"></script>
 
-    <div class="container" style="margin-bottom:285px">
-        <div class="slides">
-            <img src="~/images/imageedit_11_3678298637.jpg"  style='height: 800px; width: 800px; object-fit: contain;background-size: contain''/>
-            <img src="~/images/imageedit_3_4931344117.png" style='height: 800px; width: 800px; object-fit: contain;background-size: contain'' />
-            <img src="~/images/imageedit_5_6890471436.png" style='height: 800px; width: 800px; object-fit: contain;background-size: contain''/>
-            <img src="~/images/imageedit_7_9978923469.jpg" style='height: 800px; width: 800px; object-fit: contain ;background-size: contain''/>
-            <img src="~/images/imageedit_9_7879279680.jpg" style='height: 800px; width: 800px; object-fit: contain ;background-size: contain' />
-        </div>
-        <canvas id="slideshow" width="600" height="200"></canvas>
+<div class="container" style="margin-bottom:285px">
+    <div class="slides">
+        <img src="~/images/imageedit_11_3678298637.jpg" style='height: 800px; width: 800px; object-fit: contain;background-size: contain' ' />
+        <img src="~/images/imageedit_3_4931344117.png" style='height: 800px; width: 800px; object-fit: contain;background-size: contain' ' />
+        <img src="~/images/imageedit_5_6890471436.png" style='height: 800px; width: 800px; object-fit: contain;background-size: contain' ' />
+        <img src="~/images/imageedit_7_9978923469.jpg" style='height: 800px; width: 800px; object-fit: contain ;background-size: contain' ' />
+        <img src="~/images/imageedit_9_7879279680.jpg" style='height: 800px; width: 800px; object-fit: contain ;background-size: contain' />
     </div>
+    <canvas id="slideshow" width="600" height="200"></canvas>
+</div>
 
 
 
