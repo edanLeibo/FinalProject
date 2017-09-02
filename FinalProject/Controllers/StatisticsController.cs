@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace FinalProject.Controllers
 {
+    [Authorize]
     public class StatisticsController : Controller
     {
         private GeneralDbContext db = new GeneralDbContext();
