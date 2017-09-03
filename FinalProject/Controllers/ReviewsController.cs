@@ -97,7 +97,7 @@ namespace FinalProject.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.BusinessID = new SelectList(db.DBBusiness, "BusinessID", "BusinessName", review.BusinessID);
+            ViewBag.BusinessID = review.BusinessID;
             return View(review);
         }
 
