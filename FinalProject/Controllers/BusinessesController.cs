@@ -152,6 +152,7 @@ namespace EX5.Controllers
             {
                 return HttpNotFound();
             }
+            business.Category=db.DBCategories.Find(business.CategoryID);
             return View(business);
         }
 
