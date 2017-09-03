@@ -3,7 +3,7 @@ namespace FinalProject.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class change2 : DbMigration
+    public partial class cha : DbMigration
     {
         public override void Up()
         {
@@ -12,6 +12,7 @@ namespace FinalProject.Migrations
             AlterColumn("dbo.Businesses", "Description", c => c.String(nullable: false));
             AlterColumn("dbo.Categories", "CategoryName", c => c.String(nullable: false));
             AlterColumn("dbo.Reviews", "Author", c => c.String(nullable: false));
+            AlterColumn("dbo.Reviews", "Description", c => c.String(nullable: false));
             AlterColumn("dbo.Offices", "City", c => c.String(nullable: false));
             AlterColumn("dbo.Offices", "Street", c => c.String(nullable: false));
             AlterColumn("dbo.Offices", "HouseNumber", c => c.String(nullable: false));
@@ -24,6 +25,7 @@ namespace FinalProject.Migrations
             AlterColumn("dbo.Offices", "HouseNumber", c => c.String());
             AlterColumn("dbo.Offices", "Street", c => c.String());
             AlterColumn("dbo.Offices", "City", c => c.String());
+            AlterColumn("dbo.Reviews", "Description", c => c.String());
             AlterColumn("dbo.Reviews", "Author", c => c.String());
             AlterColumn("dbo.Categories", "CategoryName", c => c.String());
             AlterColumn("dbo.Businesses", "Description", c => c.String());

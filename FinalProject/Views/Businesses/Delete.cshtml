@@ -11,11 +11,11 @@
     <h4>Business</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt style="display:flex;justify-content:center">
+        <dt>
             @Html.DisplayNameFor(model => model.BusinessName)
         </dt>
 
-        <dd style="display:flex;justify-content:center">
+        <dd>
             @Html.DisplayFor(model => model.BusinessName)
         </dd>
         <dt>
@@ -82,8 +82,7 @@
 
     </dl>
 
-    @using (Html.BeginForm())
-    {
+    @using (Html.BeginForm()) {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color" style="margin-bottom:285px">

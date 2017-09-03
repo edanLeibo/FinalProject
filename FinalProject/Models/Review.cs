@@ -32,5 +32,6 @@ namespace EX5.Models
         public int BusinessID { get; set; }
 
         public virtual Business Business { get; set; }
+
     }
 }

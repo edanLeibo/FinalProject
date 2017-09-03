@@ -1,92 +1,85 @@
 ﻿@model IEnumerable<FinalProject.Models.Office>
-
 @{
     ViewBag.Title = "Index";
 
 }
-
 <h2>List Of Offices</h2>
-
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
 @using (Html.BeginForm())
 {
-    <p>
-        Street: @Html.TextBox("Street")
-        City: @Html.TextBox("city")
-        Manager: @Html.TextBox("manager")
+    <p class="street-block input">
+         -----Street----- @Html.TextBox("Street")<br />
+         ------City------ @Html.TextBox("city")<br />
+         ---Manager--- @Html.TextBox("manager")<br />
         <input type="submit" value="Search" class="btn btn-danger" />
         <input type="button" value="Show all" onclick="location.href='@Url.Action("Index")'" class="btn btn-danger" />
     </p>
 }
-<table class="table">
-
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.OfficeID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.City)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Street)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.HouseNumber)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Latitude)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Longitude)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Manager)
-        </th>
-    </tr>
-
-
-
-
-    @foreach (var item in Model)
-    {
+<div class="table-responsive">
+    <table class="table" style="background:#bcbec3 !important">
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.OfficeID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.City)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Street)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.HouseNumber)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Latitude)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Longitude)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Manager)
-            </td>
-
-            <td>
-                <
-                @Html.ActionLink("Edit", "Edit", new { id = item.OfficeID }) |
-                @Html.ActionLink("Details", "Details", new { id = item.OfficeID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.OfficeID })
-            </td>
+            <th>
+                @Html.DisplayNameFor(model => model.OfficeID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.City)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Street)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HouseNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Latitude)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Longitude)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Manager)
+            </th>
         </tr>
 
-    }
 
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OfficeID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.City)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Street)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HouseNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Latitude)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Longitude)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Manager)
+                </td>
+                <td>
+                    <
+                    @Html.ActionLink("Edit", "Edit", new { id = item.OfficeID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.OfficeID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.OfficeID })
+                </td>
+            </tr>
 
-</table>
+        }
 
+    </table>
+</div>
 @if (Model.Count() == 0)
 {
     <strong>No offices were Found</strong>
@@ -104,44 +97,42 @@
         padding: 0;
     }
 </style>
-
 <script>
 
-    function AddMarker(map, Latitude, Longitude) {
-        var latlng = new google.maps.LatLng(Latitude, Longitude);
+        function AddMarker(map, Latitude, Longitude) {
+            var latlng = new google.maps.LatLng(Latitude, Longitude);
 
-        var markeroption = new google.maps.Marker({
-            position: latlng,
-            draggable: false,
-            map: map,
-            title: "Center"
-        });
-    }
+            var markeroption = new google.maps.Marker({
+                position: latlng,
+                draggable: false,
+                map: map,
+                title: "Center"
+            });
+        }
 
-    function initMap() {
-        var latlng = new google.maps.LatLng(32.812452, 34.996451);
+        function initMap() {
+            var latlng = new google.maps.LatLng(32.812452, 34.996451);
 
-        var options = {
-            zoom: 10, center: latlng,
-            mapTypeId: google.maps.MapTypeId.TERRAIN
-        };
+            var options = {
+                zoom: 10, center: latlng,
+                mapTypeId: google.maps.MapTypeId.TERRAIN
+            };
 
-        var map = new google.maps.Map(document.getElementById
-            ("map_canvas"), options);
+            var map = new google.maps.Map(document.getElementById
+                ("map_canvas"), options);
 
-        @foreach (var l in Model)
+            @foreach (var l in Model)
         {
              @(string.Format("AddMarker(map, {0},{1});", l.Latitude, l.Longitude));
         }
-        return map;
-    };
+            return map;
+        };
 
 
 </script>
-<div id="map_canvas" style="width: 500px; height: 300px; margin: auto !important" />
+<div id="map_canvas" class="offices-map" style="width: 500px; height: 300px; margin: auto !important" />
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBz6T_-pt82oRbHIpMHvVQakDH6PzZ31C8&callback=initMap"
         async defer></script>
-
 
 <!--
 

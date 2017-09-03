@@ -1,9 +1,8 @@
 ﻿@model IEnumerable<EX5.Models.Business>
-
 @{
     ViewBag.Title = "Index";
 }
-
+<h2>MyBiz - Businesses Search Engine</h2>
 @{
     HashSet<string> allCities = new HashSet<string>();
     foreach (var b in Model)
@@ -17,25 +16,22 @@
 }
 @using (Html.BeginForm())
 {
-    <p>
-        Name of business: @Html.TextBox("BusinessName")
-        Street address: @Html.TextBox("StreetAddress")
-        <br />
-        Category: @Html.TextBox("Category")
-        City: <select name="City">
+    <p class="street-block">
+        ----Business Name---- @Html.TextBox("BusinessName")<br />
+        -----Street Address---- @Html.TextBox("StreetAddress")<br />
+        --------Category-------- @Html.TextBox("Category")<br />
+        City <select name="City">
             <option value=""></option>
             @foreach (var c in allCities)
             {
                 <option value="@c"> @c</option>
             }
-        </select>
+        </select><br />
         <br />
-
         <input type="submit" value="Filter" class="btn btn-danger" />
         <input type="button" value="Show all" onclick="location.href='@Url.Action("Index")'" class="btn btn-danger" />
     </p>
 }
-
 
 @if (User.Identity.Name.Equals("admin@gmail.com"))
 {
