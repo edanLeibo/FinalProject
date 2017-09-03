@@ -23,20 +23,23 @@ namespace EX5.Models
         [DataType(DataType.Text)]
         public string Owner { get; set; }
 
+        [Required]
         [Display(Name = "Phone Number")]
         [DataType(DataType.Text)]
         public string PhoneNumber { get; set; }
 
+        [Required]
         [Display(Name = "Street Address")]
         [DataType(DataType.Text)]
         public string StreetAddress { get; set; }
 
+        [Required]
         [Display(Name = "City")]
         [DataType(DataType.Text)]
         public string City { get; set; }
 
+        [Required]
         [Display(Name = "Website")]
-        [DataType(DataType.Url)]
         public string Website { get; set; }
 
         [Required]
@@ -44,10 +47,12 @@ namespace EX5.Models
         [DataType(DataType.Text)]
         public string Description { get; set; }
 
+        [Required]
         [Display(Name = "Rank")]
         public double AVGrank { get; set; }
 
-        [Display(Name = "Category")]
+        [Required]
+        [Display(Name = "CategoryID")]
         public int CategoryID { get; set; }
 
         public Category Category { get; set; }

@@ -91,7 +91,7 @@ namespace EX5.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,BusinessName,CategoryID,Type,Owner,PhoneNumber,Address,Website,Description,StreetAddress,City,AVGrank,Photo,Video")] Business business)
+        public ActionResult Create([Bind(Include = "ID,BusinessName,CategoryID,Type,Owner,PhoneNumber,Address,Website,Description,StreetAddress,City,AVGrank")] Business business)
         {
             if (ModelState.IsValid)
             {
@@ -99,7 +99,7 @@ namespace EX5.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
+            ViewBag.CategoryID = new SelectList(db.DBCategories.ToList(), "CategoryID", "CategoryName",business.CategoryID);
             return View(business);
         }
 
@@ -111,12 +111,12 @@ namespace EX5.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ViewBag.CategoryID = new SelectList(db.DBCategories.ToList(), "CategoryID", "CategoryName");
             Business business = db.DBBusiness.Find(id);
             if (business == null)
             {
                 return HttpNotFound();
             }
+            ViewBag.CategoryID = new SelectList(db.DBCategories.ToList(), "CategoryID", "CategoryName",business.CategoryID);
             return View(business);
         }
 
@@ -134,6 +134,7 @@ namespace EX5.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.CategoryID = new SelectList(db.DBCategories.ToList(), "CategoryID", "CategoryName", business.CategoryID);
             return View(business);
         }
 
@@ -146,9 +147,7 @@ namespace EX5.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Business business = db.DBBusiness.Find(id);
-            business.Category = db.DBCategories.Where(x => x.CategoryID == business.CategoryID).FirstOrDefault();
             //var Bussinesses1 = db.DBBusiness.Find(id);
-
             if (business == null)
             {
                 return HttpNotFound();

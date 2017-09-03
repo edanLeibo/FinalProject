@@ -215,6 +215,18 @@
     <Compile Include="Migrations\201709022109108_cha.Designer.cs">
       <DependentUpon>201709022109108_cha.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709030110217_chageagain.cs" />
+    <Compile Include="Migrations\201709030110217_chageagain.Designer.cs">
+      <DependentUpon>201709030110217_chageagain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709030148387_changing.cs" />
+    <Compile Include="Migrations\201709030148387_changing.Designer.cs">
+      <DependentUpon>201709030148387_changing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709030225468_changingReq.cs" />
+    <Compile Include="Migrations\201709030225468_changingReq.Designer.cs">
+      <DependentUpon>201709030225468_changingReq.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Business.cs" />
@@ -363,6 +375,15 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201709022109108_cha.resx">
       <DependentUpon>201709022109108_cha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709030110217_chageagain.resx">
+      <DependentUpon>201709030110217_chageagain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709030148387_changing.resx">
+      <DependentUpon>201709030148387_changing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709030225468_changingReq.resx">
+      <DependentUpon>201709030225468_changingReq.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
